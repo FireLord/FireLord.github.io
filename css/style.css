@@ -548,21 +548,21 @@
 		}
 
 		.image.left, .image.right {
-			max-width: auto;
+			max-width: 40%;
 		}
 
 			.image.left img, .image.right img {
-				width: auto;
+				width: 100%;
 			}
 
 		.image.fit {
 			display: block;
 			margin: 0 0 2em 0;
-			width: auto
+			width: 100%;
 		}
 
 			.image.fit img {
-				width: auto;
+				width: 100%;
 			}
 
 /* List */
