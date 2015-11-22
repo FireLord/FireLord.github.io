@@ -8,7 +8,7 @@
     window.index.pipeline.reset();
 
     window.index.add({
-      href: 'http://materializecss.com/about.html',
+      href: 'http://firelord1.github.io/about.html',
       title: 'About',
       body: 'Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology. Google"s goal is to develop a system of design that allows for a unified user experience across all their products on any platform.'
     });
@@ -61,7 +61,7 @@
 
       var query = $(this).val();
       var results = window.index.search(query).slice(0, 6).map(function (result) {
-        var href = result.ref.split('http://materializecss.com/')[1];
+        var href = result.ref.split('http://firelord1.github.io/')[1];
         return [href.charAt(0).toUpperCase() + href.slice(1), result.ref];
       });
       renderResults(results);
