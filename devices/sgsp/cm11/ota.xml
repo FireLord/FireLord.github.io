@@ -1,0 +1,19 @@
+<ROM>    
+<RomName>cm11-sgsp</RomName>
+<!--  Change Starts Here  -->
+<VersionName>V2</VersionName>
+<VersionNumber type="integer">20160226</VersionNumber>
+<DirectUrl>DIRECT LINK GOES HERE</DirectUrl>
+<FileSize type="integer">SIZE IN BYTES HERE</FileSize>
+<CheckMD5>MD5 HERE</CheckMD5>
+<!--  Change Ends Here  -->
+<HttpUrl>
+<![CDATA[https://www.androidfilehost.com/?fid=24421527759889161]]></HttpUrl>
+<Android>4.4.4</Android>
+<Developer>firelord</Developer>
+<WebsiteURL>
+http://forum.xda-developers.com/galaxy-star/orig-development/rom-cyanogenmod-11-galaxy-star-pro-plus-t3322561
+</WebsiteURL>
+<DonateURL>DONATE URL HERE</DonateURL>
+<Changelog>Please visit here: http://gg.gg/cm11-changelog</Changelog>
+</ROM> 
