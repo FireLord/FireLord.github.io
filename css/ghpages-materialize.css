@@ -6916,7 +6916,7 @@ a.button-collapse.top-nav i {
 }
 #front-page-logo {
     display: inline-block;
-    height: 100%;
+    height: 240%;
     pointer-events: none
 }
 @media only screen and (max-width: 992px) {
