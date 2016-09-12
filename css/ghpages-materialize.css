@@ -8405,7 +8405,7 @@ a.button-collapse.top-nav {
 
 #front-page-logo {
   display: inline-block;
-  height: 100%;
+  height: 125px;
   pointer-events: none; }
 
 @media only screen and (max-width: 992px) {
