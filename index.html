@@ -14,12 +14,40 @@
     <!-- Title -->
     <title>FireLord | Home</title>
 </head>
-<body>
-    <h1>Site under new ui construction</h1>
+<body id="page-top">
+
+<nav>
+    <div class="nav-wrapper grey darken-4">
+        <a href="#page-top" class="brand-logo">FireLord</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#posts">Posts</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    
+<div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!">
+        <img src="images\carousel.png">
+    </a>
+</div>
+    
+
+<h1>Site under new ui construction</h1>
 
 <!-- Import jQuery before materialize.js -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Import materialize.js -->
 <script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript">
+    $('.carousel.carousel-slider').carousel({ fullWidth: true });
+</script>
 </body>
 </html>
