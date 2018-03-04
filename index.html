@@ -17,13 +17,16 @@
     <!-- Title -->
     <title>FireLord | Home</title>
 </head>
-<body id="page-top" bgcolor="#757575">
+<body id="page-top" class="scrollspy">
 
-<!-- Navigation bar-->
+<!-- Navigation bar desktop -->
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper grey darken-1">
             <a href="#page-top" class="brand-logo">FireLord</a>
+            <a href="#" data-activates="slide-out" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="#about">About</a>
@@ -39,15 +42,51 @@
     </nav>
 </div>
 
+<!-- Navigation bar mobile -->
+<ul id="slide-out" class="side-nav">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="images/sidenavbg.png">
+            </div>
+            <a href="#!user">
+                <img class="circle" src="images/logo.jpg">
+            </a>
+            <a href="#!name">
+                <span class="white-text name">FireLord</span>
+            </a>
+            <a href="#!email">
+                <span class="white-text email">firelord.xda@lineageos.org</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <a class="waves-effect" href="#about">
+            <i class="material-icons">cloud</i>About</a>
+    </li>
+    <li>
+        <a class="waves-effect" href="#posts">
+            <i class="material-icons">book</i>Posts</a>
+    </li>
+    <li>
+        <a class="waves-effect" href="#contact">
+            <i class="material-icons">perm_contact_calendar</i>Contact</a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+</ul>
+
 <!-- A image to give intro -->
 <div class="carousel carousel-slider">
     <a class="carousel-item" href="#one!">
         <img src="images\background.png">
     </a>
-</div><br>
+</div>
 
 <!-- About section -->
-<div id="about" class="containe center white-text"><br>
+<div class="deep-purple"><br>
+<div id="about" class="containe center white-text scrollspy"><br>
     <h1>About me</h1>
     <p>If you can't do great things, do small things in a great way.<br> — Napoleon Hill</p>
 </div>
@@ -58,12 +97,12 @@
 
         <!-- Coding Skills -->
         <div class="col s12 m4">
-            <div class="card">
+            <div class="card hoverable blue darken-3">
                 <div class="card-image">
                     <img src="images\code.jpg">
                     <span class="card-title">Coding Skills</span>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>Like any other student, I know few languages. Such as kotlin, html, C, css. Its my small hobby kind of
                         to make stuff. </p>
                 </div>
@@ -72,12 +111,12 @@
 
         <!-- Birthday and stuff info -->
         <div class="col s12 m4">
-            <div class="card">
+            <div class="card hoverable indigo accent-4">
                 <div class="card-image">
                     <img height="308" src="images\birth.jpg">
                     <span class="card-title">Birthday</span>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>I was born on 3 Jan 2001 in Bihar. So accordig to that Im 17yrs old.But I live in Delhi-NCR
                         for studies and other stuff.
                     </p>
@@ -87,49 +126,51 @@
 
         <!-- Education info -->
         <div class="col s12 m4">
-            <div class="card">
+            <div class="card hoverable red accent-2">
                 <div class="card-image">
                     <img height="308" src="images\education.jpg">
                     <span class="card-title">Education</span>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>Im in class 10th, studying in Army Public School since 2009. Academically not that good but I do like Maths and Phy</p>
                 </div>
             </div>
         </div>
     </div>
-</div><br><br><br><br><br><br><br><br><br><br><br><br>
+</div><br></div>
 
 <!-- Blos posts| automated by jekyll soon -->
-<div id="posts" class="container center white-text">
+<div class="light-blue darken-3">
+<br><br><br><br><br>
+<div id="posts" class="container center white-text scrollspy">
     <h1>Blog Posts</h1>
 </div><br><br><br><br>
 
 <div class="container center">
     <div class="row">
         <div class="col s12 m3">
-            <div class="card">
+            <div class="card hoverable yellow accent-2">
                 <div class="card-image">
                     <img src="images\build.png">
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" href="https://youtu.be/_bz7OLtM2qY">
+                    <a class="btn-floating halfway-fab waves-effect waves-light red" href="posts.html">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>Here is basic about making a custom rom from published device sources.. stay tuned for in detailed device source making.</p>
                 </div>
             </div>
         </div>
 
         <div class="col s12 m3">
-            <div class="card">
+            <div class="card hoverable brown accent-2">
                 <div class="card-image">
                     <img src="images\speed.png">
                     <a class="btn-floating halfway-fab waves-effect waves-light red" href="https://youtu.be/zwGDz_Sn7YQ">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>In this we will setup simple ccache to speed up rom building/compilation but make sure that you enough space to hold that
                     cached data.</p>
                 </div>
@@ -137,28 +178,28 @@
         </div>
 
         <div class="col s12 m3">
-            <div class="card">
+            <div class="card hoverable light-green accent-2">
                 <div class="card-image">
                     <img src="images\xml.png">
                     <a class="btn-floating halfway-fab waves-effect waves-light red" href="https://youtu.be/dQnhdLxVfjc">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>This is easy method to clone your device tree and other sources without typing git clone each time for all the repos..</p>
                 </div>
             </div>
         </div>
 
         <div class="col s12 m3">
-            <div class="card">
+            <div class="card hoverable grey darken-1">
                 <div class="card-image">
                     <img src="images\carousel.png">
                     <a class="btn-floating halfway-fab waves-effect waves-light red">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
-                <div class="card-content">
+                <div class="card-content white-text">
                     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require
                         little markup to use effectively.</p>
                 </div>
@@ -226,9 +267,9 @@
         </div>
     </div>
 </div><br><br><br><br><br><br><br><br><br><br><br><br>
-
+</div>
 <!-- Footer start -->
-<footer id="contact" class="page-footer grey darken-4">
+<footer id="contact" class="page-footer grey darken-4 scrollspy">
     <div class="container center">
         <div class="row">
                 <a class="btn-floating btn-large waves-effect waves-blue white" href="https://www.facebook.com/aman.FireLord"><i class="fa fa-facebook black-text fa-3x"></i></a> <!-- Facebook -->
@@ -253,6 +294,12 @@
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript">
     $('.carousel.carousel-slider').carousel({ fullWidth: true });
+</script>
+<script type="text/javascript">
+$(".button-collapse").sideNav();
+</script>
+<script type="text/javascript">
+ $(document).ready(function(){ $('.scrollspy').scrollSpy(); });
 </script>
 </body>
 </html>
