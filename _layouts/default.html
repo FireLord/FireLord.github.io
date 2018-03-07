@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body id="page-top" class="scrollspy">
+
+<!-- Navigation bar desktop -->
+<div class="navbar-fixed">
+    <nav class="pink lighten-1">
+        <div class="nav-wrapper container">
+            <a href="#page-top" class="brand-logo font-Lobster-2" style="font-size:50px">FireLord</a>
+            <a href="#" data-activates="slide-out" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a class="font-Kaushan" style="font-size:20px" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="font-Kaushan" style="font-size:20px" href="#posts">Posts</a>
+                </li>
+                <li>
+                    <a class="font-Kaushan" style="font-size:20px" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Navigation bar mobile -->
+<ul id="slide-out" class="side-nav">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="{{site.url}}/assets/images/sidenavbg.png">
+            </div>
+            <a href="#!user">
+                <img class="circle" src="{{site.url}}/assets/images/logo.jpg">
+            </a>
+            <a href="#!name">
+                <span class="white-text name">FireLord</span>
+            </a>
+            <a href="#!email">
+                <span class="white-text email">firelord.xda@lineageos.org</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <a class="waves-effect" href="#about">
+            <i class="material-icons">cloud</i>About</a>
+    </li>
+    <li>
+        <a class="waves-effect" href="#posts">
+            <i class="material-icons">book</i>Posts</a>
+    </li>
+    <li>
+        <a class="waves-effect" href="#contact">
+            <i class="material-icons">perm_contact_calendar</i>Contact</a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+</ul>
+
+<!-- A image to give intro -->
+<div class="carousel carousel-slider">
+    <div class="carousel-item">
+        <img src="{{site.url}}/assets/images/578 - KgnH1mB.jpg">
+    </div>
+</div>
+
+<!-- About section -->
+<div class="deep-purple"><br>
+<div id="about" class="containe center white-text scrollspy"><br>
+    <div class="font-Lobster-2">
+    <h1>About me</h1>
+    </div>
+    <p style="font-size:20px">If you can't do great things, do small things in a great way.<br> — Napoleon Hill</p>
+</div>
+
+<!-- Actual about part -->
+<div class="container"><br><br><br><br>
+    <div class="row">
+
+        <!-- Coding Skills -->
+        <div class="col s12 m4">
+            <div class="card hoverable blue darken-3">
+                <div class="card-image">
+                    <img src="{{site.url}}/assets/images/code.jpg">
+                    <span class="card-title">Coding Skills</span>
+                </div>
+                <div class="card-content white-text">
+                    <p>Like any other student, I know few languages. Such as kotlin, html, C, css. Its my small hobby kind of
+                        to make stuff. </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday and stuff info -->
+        <div class="col s12 m4">
+            <div class="card hoverable indigo accent-4">
+                <div class="card-image">
+                    <img height="308" src="{{site.url}}/assets/images/birth.jpg">
+                    <span class="card-title">Birthday</span>
+                </div>
+                <div class="card-content white-text">
+                    <p>I was born on 3 Jan 2001 in Bihar. So accordig to that Im 17yrs old.But I live in Delhi-NCR
+                        for studies and other stuff.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education info -->
+        <div class="col s12 m4">
+            <div class="card hoverable red accent-2">
+                <div class="card-image">
+                    <img height="308" src="{{site.url}}/assets/images/education.jpg">
+                    <span class="card-title">Education</span>
+                </div>
+                <div class="card-content white-text">
+                    <p>Im in class 10th, studying in Army Public School since 2009. Academically not that good but I do like Maths and Phy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br></div>
+
+<!-- Blog posts automated by jekyll -->
+<div class="light-blue darken-3">
+<br><br><br><br><br>
+<div id="posts" class="container center white-text scrollspy">
+    <h1>Blog Posts</h1>
+</div><br><br><br><br>
+
+<div class="container center">
+    <div class="row">
+        {% for post in site.posts %}
+          {% include card.html %}
+        {% endfor %}
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+{% include footer.html %}
+
+{% include scripts.html %}
+
+</body>
+</html>
