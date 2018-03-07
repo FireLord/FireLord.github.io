@@ -22,7 +22,7 @@
 </div>
 
 <!-- Navigation bar mobile -->
-<ul id="slide-out" class="side-nav">
+<ul id="slide-out" class="side-nav collapsible collapsible-accordion">
     <li>
         <div class="user-view">
             <div class="background">
@@ -40,15 +40,25 @@
         </div>
     </li>
     <li>
-        <a class="waves-effect" href="{{site.url}}/index.html#about">
+        <a class="collapsible-header waves-effect" href="{{site.url}}/index.html#about">
             <i class="material-icons">cloud</i>About</a>
     </li>
     <li>
-        <a class="waves-effect" href="{{site.url}}/index.html#posts">
+        <a class="collapsible-header waves-effect">
             <i class="material-icons">book</i>Posts</a>
+        <div class="collapsible-body">
+            <ul>
+                <li>
+                    <a href="{{site.url}}/index.html#posts">All Posts</a>
+                </li>
+                {% for post in site.posts %} 
+                    {% include poststab.html %} 
+                {% endfor %}
+            </ul>
+        </div>
     </li>
     <li>
-        <a class="waves-effect" href="{{site.url}}/index.html#contact">
+        <a class="collapsible-header waves-effect" href="{{site.url}}/index.html#contact">
             <i class="material-icons">perm_contact_calendar</i>Contact</a>
     </li>
     <li>
