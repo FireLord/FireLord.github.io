@@ -1,3 +1,6 @@
+baseurl: "/"
+url: "https://firelord1.github.io"
+
 kramdown:
  input: GFM
  auto_ids: true
