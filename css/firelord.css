@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Lobster_Two";
+    src: url("../fonts/Lobster_Two/LobsterTwo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dancing_Script";
+    src: url("../fonts/Dancing_Script/DancingScript-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dancing_Script-Bold";
+    src: url("../fonts/Dancing_Script/DancingScript-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Indie_Flower";
+    src: url("../fonts/Indie_Flower/Indie_Flower.tff") format("truetype");
+}
+
+@font-face {
+    font-family: "Kaushan_Script";
+    src: url("../fonts/Kaushan_Script/KaushanScript-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Source_Code_Pro";
+    src: url("../fonts/Source_Code_Pro/SourceCodePro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ofaly";
+    src: url("../fonts/Ofaly/Ofaly-Demo.ttf") format("truetype");
+}
+
+.font-Lobster-2 {
+    font-family: "Lobster_Two";
+}
+
+.font-DancingScript {
+    font-family: "Dancing_Script";
+}
+
+.font-DancingScriptBold {
+    font-family: "Dancing_Script-Bold";
+}
+
+.font-IndieFlower {
+    font-family: "Indie_Flower";
+}
+
+.font-Kaushan {
+    font-family: "Kaushan_Script";
+}
+
+.font-SourceCodePro {
+    font-family: "Source_Code_Pro"
+}
+
+.font-Ofaly {
+    font-family: "Ofaly"
+}
+
+.about-section-bg {
+    background-image: url("../images/1097 - RKYV8ey.jpg");
+}
+
+.blog-section-bg {
+    background-image: url("../images/1561 - uBjxmEa.jpg");
+}
