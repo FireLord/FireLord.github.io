@@ -33,6 +33,11 @@
     src: url("../fonts/Ofaly/Ofaly-Demo.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Mochary";
+    src: url("../fonts/Mochary/Mochary.ttf") format("truetype");
+}
+
 .font-Lobster-2 {
     font-family: "Lobster_Two";
 }
@@ -54,11 +59,15 @@
 }
 
 .font-SourceCodePro {
-    font-family: "Source_Code_Pro"
+    font-family: "Source_Code_Pro";
 }
 
 .font-Ofaly {
-    font-family: "Ofaly"
+    font-family: "Ofaly";
+}
+
+.font-Mochary {
+    font-family: "Mochary";
 }
 
 .about-section-bg {
