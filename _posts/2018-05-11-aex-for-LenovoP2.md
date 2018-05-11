@@ -1,5 +1,5 @@
 ---
-title: AEX Oreo for Lenovo Vibe P2
+title: AEX Oreo for Lenovo P2
 layout: post
 featured-img: aex2.png
 cardcolor:   blue-grey darken-4
