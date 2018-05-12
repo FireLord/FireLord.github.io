@@ -23,22 +23,35 @@ includes various things like java, gcc, gnupg, etc.
 ### Setting up Linux system
 
 ##### 1. Installing Java
-
-> sudo apt-get update
->
-> sudo apt-get install openjdk-8-jdk
+<div class="card">
+<pre class="language-bash">
+<code class="language-bash">
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+</code>
+</pre>
+</div>
 
 ##### 2. Required packages 
-
-> sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip bc imagemagick 
+<div class="card">
+<pre class="language-bash">
+<code class="language-bash">
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip bc imagemagick 
+</code>
+</pre>
+</div>
 
 ### Setting up Git
 
 ##### 1. Set a Git username & email
-
-> git config --global user.name "YOUR USERNAME"
->
-> git config --global user.name "youremailid@example.com"
+<div class="card">
+<pre class="language-bash">
+<code class="language-bash">
+git config --global user.name "YOUR USERNAME"
+git config --global user.email "youremailid@example.com"
+</code>
+</pre>
+</div>
 
 ##### 2. Setting up SSH for git ( optional )
 
