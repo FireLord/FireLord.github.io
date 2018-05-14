@@ -1,5 +1,6 @@
 baseurl: ""
 url: "https://firelord1.github.io"
+permalink: /:title/
 
 kramdown:
  input: GFM
