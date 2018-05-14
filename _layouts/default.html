@@ -139,19 +139,23 @@
 </div><br></div>
 
 <!-- Blog posts automated by jekyll -->
-<div class="blog-section-bg">
-<br><br><br><br><br><br>
-<div id="posts" class="container center white-text scrollspy">
-    <h1 class="font-Lobster-2">Blog Posts</h1>
-</div><br><br><br><br>
-
-<div class="container center">
-    <div class="row">
-        {% for post in site.posts %}
-          {% include card.html %}
-        {% endfor %}
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="{{site.url}}/assets/images/408 - CzW6Jr4.jpg">
     </div>
-</div><br>
+</div>
+<div id="posts" class="section green lighten-3 center scrollspy">
+    <div class="row container">
+        <h2 class="font-Lobster-2 lime-text text-lighten-5 header">Blog Posts</h2>
+        <div class="row">
+            {% for post in site.posts %} {% include card.html %} {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="{{site.url}}/assets/images/408 - CzW6Jr4.jpg">
+    </div>
 </div>
 
 {% include footer.html %}
