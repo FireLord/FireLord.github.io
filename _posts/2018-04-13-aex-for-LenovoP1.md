@@ -194,7 +194,7 @@ And many more coming in future! Many extensions are added in each update so we m
 <b><font color="#42a5f5">Download ROM, GApps here for your device!</font></b>
 <br><br>
 
-<a href="https://www.androidfilehost.com/?w=files&flid=263808"><b><font color="#0d47a1">Passion</font></b></a>
+<a href="https://downloads.aospextended.com/passion/"><b><font color="#0d47a1">Passion</font></b></a>
 <br><br>
 
 <a href="http://opengapps.org"><b><font color="#fb8c00">Gapps</font></b></a>
@@ -263,5 +263,5 @@ Clean Flash is always recommended!<br><br>
 </p>
 
 <blockquote>
-* Camera recording isnt working
+* You tell
 </blockquote>
