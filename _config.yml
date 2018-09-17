@@ -1,5 +1,5 @@
 baseurl: ""
-url: "https://firelord1.github.io"
+url: "https://firelord.github.io"
 permalink: /:title/
 
 kramdown:
