@@ -89,6 +89,6 @@ sudo chown -R gerrit:gerrit gerrit
 </div>
 
 ##### 9. Gerrit sample config files
-1. [Gerrit config](https://gist.githubusercontent.com/FireLord1/350dba5935e112942fbdbc2e45774fd5/raw/91f04991a995776881e30930c3f9d4d4955452e2/Gerrit%2520sample%2520config)
+1. [Gerrit config]({{site.url}}/assets/doc/gerrit.txt)
 2. [All-projects part-1]({{site.url}}/assets/images/gerrit\Screenshot (9).png)
 3. [All-projects part-2]({{site.url}}/assets/images/gerrit\Screenshot (10).png)
