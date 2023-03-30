@@ -8,10 +8,22 @@
     color: #FF5733 !important;
 }
 
-.color-light-black{
+.color-light-black {
     background-color: #101010;
 }
 
-.text-color-aqua{
+.text-color-aqua {
     color: #FF5733;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+}
+
+.navbar-toggler-icon::before {
+    font-family: FontAwesome;
+    font-size: xx-large;
+    color: #FF5733;
+    /* bars-staggered */
+    content: "\f550";
 }
