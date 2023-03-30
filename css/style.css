@@ -1,10 +1,17 @@
-.bg-image{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: brightness(0.55);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.nav-link:hover {
+    color: #FF5733;
+}
+
+.fa-cust:hover {
+    font-size: 2em;
+    transition: 0.3s ease-out;
+    color: #FF5733 !important;
+}
+
+.color-light-black{
+    background-color: #101010;
+}
+
+.text-color-aqua{
+    color: #FF5733;
 }
