@@ -23,7 +23,7 @@
 .navbar-toggler-icon::before {
     font-family: FontAwesome;
     font-size: xx-large;
-    color: #FF5733;
+    color: white;
     /* bars-staggered */
     content: "\f550";
 }
