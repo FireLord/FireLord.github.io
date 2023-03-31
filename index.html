@@ -12,10 +12,10 @@
   <title>FireLord | Home</title>
 </head>
 
-<body class="color-light-black">
+<body class="color-light-black pt-5">
 
   <!-- navbar -->
-  <nav class="navbar nav-underline navbar-expand-lg navbar-dark">
+  <nav class="navbar fixed-top nav-underline navbar-expand-lg navbar-dark color-light-black">
     <div class="container-fluid mx-5 mt-5">
       <a class="navbar-brand" href="#"><i class="fa-solid fa-fire fa-2xl color-orange"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -24,8 +24,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="#scrollspyHeading1">Home</a>
+          <a class="nav-link" href="#scrollspyHeading2">About</a>
           <a class="nav-link" href="work.html">Work</a>
           <a class="nav-link" href="#">Blog</a>
           <a class="nav-link" href="contact.html">Contact</a>
@@ -33,31 +33,86 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero -->
-  <div class="container">
-    <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
-      <div>
-        <h1 class="text-light display-1 fw-bold lh-1">Aman Kumar</h1><br>
+  <div data-bs-spy="scroll">
+    <!-- Home hero -->
+    <div class="pt-5 pb-5" id="scrollspyHeading1">
+      <div class="container pt-5 pb-5">
+        <h1 class="text-light display-1 fw-bold lh-1 text-center pt-4 pb-4">Aman Kumar</h1>
         <h4 class="color-orange display-5 text-center">I'm a Developer</h4>
+        <img src="assets/img/3d-human-cat-removebg.webp" class="d-block mx-auto pt-5 img-fluid">
+        <h5 class="text-light fw-normal text-center pt-5"><i class="fa-brands fa-android fa-lg"></i> Android | <i
+            class="fa-brands fa-bootstrap fa-lg"></i> Bootstrap Web | <i class="fa-brands fa-python fa-lg"></i> Python
+          </h6>
       </div>
     </div>
-  </div>
 
-  <!-- Social icons -->
-  <div class="container-fluid">
-    <nav class="nav flex-sm-column ms-5">
-      <a class="nav-link pb-3" href="https://www.twitter.com/FireLord_Aman" target="_blank"><i
-          class="fa-brands fa-twitter fa-xl fa-cust" style="color: white"></i></a>
-      <a class="nav-link pb-3" href="https://www.instagram.com/firelord_aman" target="_blank"><i
-          class="fa-brands fa-instagram fa-xl fa fa-cust" style="color: white"></i></a>
-      <a class="nav-link pb-3" href="https://www.linkedin.com/in/amankumar035" target="_blank"><i
-          class="fa-brands fa-linkedin fa-xl fa-cust" style="color: white"></i></a>
-      <a class="nav-link pb-3" href="https://www.github.com/FireLord" target="_blank"><i
-          class="fa-brands fa-github fa-xl fa-cust" style="color: white"></i></a>
-      <a class="nav-link pb-3" href="https://www.youtube.com/c/FireLord" target="_blank"><i
-          class="fa-brands fa-youtube fa-xl fa-cust" style="color: white"></i></a>
-    </nav>
+    <div class="pt-5" id="scrollspyHeading2">
+    <div class="container pt-5" >
+      <p class="text-secondary text-center fs-6 pt-1">Let me introduce myself</p>
+      <u class="color-orange">
+        <h1 class="text-light text-center"> About me </h1>
+      </u>
+    </div>
+  </div>
+    <!-- About hero --->
+    <div class="container col-xxl-8 px-4 py-4">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-12 col-sm-8 col-lg-6">
+          <img src="assets/img/me.webp" class="d-block mx-auto img-fluid" width="600" height="1200" loading="lazy"
+            alt="Aman Kumar">
+        </div>
+        <div class="col-lg-6">
+          <p class="color-orange fs-5">Nice to meet you</p>
+          <h1 class="display-5 fw-bold lh-1 mb-3 text-light">Android App Developer</h1>
+          <p class="lead color-off-white">
+            Punctual and calm minded person who loves to learn new things about programming.
+            A recognised developer at XDA for making android kernels and firmware for open source community. Love to
+            explore things around linux system.
+          </p>
+          <p class="lead color-off-white">👉 Into android app development</p>
+          <p class="lead color-off-white">👉 DSA using python</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a class="btn btn-bd-orange" href="assets/doc/resume.pdf" role="button">Download Resume</a>
+          </div>
+
+          <!-- Personal Details -->
+          <div class="row pt-3">
+            <div class="col-12 col-md-6">
+              <p class="color-off-white"><b>Name:</b> Aman Kumar</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="color-off-white"><b>Email:</b><a class="color-orange ps-1"
+                  href="mailto:amankumarmicro@gmail.com">amankumarmicro@gmail.com</a> </p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="color-off-white"><b>Location:</b> Noida, UP</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="color-off-white"><b>Availability:</b> Open to work</p>
+            </div>
+          </div>
+
+          <!-- Social icons -->
+          <div class="row">
+            <nav class="nav">
+              <a class="nav-link pb-3" href="https://www.twitter.com/FireLord_Aman" target="_blank">
+                <i class="fa-brands fa-twitter fa-xl fa-cust text-light"></i></a>
+              <a class="nav-link pb-3" href="https://www.instagram.com/firelord_aman" target="_blank">
+                <i class="fa-brands fa-instagram fa-xl fa fa-cust text-light"></i></a>
+              <a class="nav-link pb-3" href="https://www.linkedin.com/in/amankumar035" target="_blank">
+                <i class="fa-brands fa-linkedin fa-xl fa-cust text-light"></i></a>
+              <a class="nav-link pb-3" href="https://www.github.com/FireLord" target="_blank">
+                <i class="fa-brands fa-github fa-xl fa-cust text-light"></i></a>
+              <a class="nav-link pb-3" href="https://www.youtube.com/c/FireLord" target="_blank">
+                <i class="fa-brands fa-youtube fa-xl fa-cust text-light"></i></a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Project-->
+
   </div>
 
   <!-- Scripts -->
