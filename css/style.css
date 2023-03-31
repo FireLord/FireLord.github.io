@@ -16,6 +16,18 @@
     color: #FF5733;
 }
 
+.color-green {
+    color: #33ff74;
+}
+
+.color-purple {
+    color: #c233ff;
+}
+
+.color-blue {
+    color: #338bff;
+}
+
 .navbar-toggler-icon {
     background-image: none;
 }
@@ -28,13 +40,13 @@
     content: "\f550";
 }
 
-.color-off-white{
+.color-off-white {
     color: #E2DFD2;
 }
 
-.btn-bd-orange{
+.btn-bd-orange {
     --bs-btn-color: white;
-    --bs-btn-bg:#FF5733;
+    --bs-btn-bg: #FF5733;
     --bs-btn-hover-color: #E2DFD2;
     --bs-btn-hover-bg: #ff5833c5;
 }
