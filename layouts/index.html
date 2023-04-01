@@ -1,0 +1,34 @@
+{{- block "main" . }}
+<!DOCTYPE html>
+<html lang="en">
+
+{{- partial "head.html" . -}}
+
+<body class="color-light-black pt-5">
+
+  {{- partial "navbar.html" . -}}
+
+  <div data-bs-spy="scroll">
+    {{- partial "home.html" . -}}
+
+    {{- partial "about.html" . -}}
+
+    <!--Project-->
+    <div class="pt-5" id="scrollspyHeading3">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <!--Blog-->
+    <div class="pt-5" id="scrollspyHeading4">
+      
+    </div>
+  </div>
+
+  {{- partial "script.html" . -}}
+
+</body>
+
+</html>
+{{- end }}
