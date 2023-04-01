@@ -1,0 +1,23 @@
+<!--Blog-->
+<div class="pt-5" id="scrollspyHeading4">
+    <div class="container pt-5">
+        <p class="text-secondary text-center fs-5 pt-2">Here I share my posts</p>
+        <u class="color-orange">
+            <h1 class="text-light text-center display-1 fw-bold">Blog 📝</h1>
+        </u>
+    </div>
+</div>
+
+<div class="container col-xxl-6 px-4 py-5">
+    {{ range ( where .Site.RegularPages "Type" "blog" ) }}
+    <div class="container py-1">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <h4 class="card-title fw-bold">{{ .Title }}</h4>
+                <p class="card-text">{{ .Content }}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-bd-orange">Read more → </a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
