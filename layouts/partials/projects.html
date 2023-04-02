@@ -6,46 +6,48 @@
             <h1 class="text-light text-center display-1 fw-bold">Projects 🧑🏻‍💻</h1>
         </u>
     </div>
-</div>
 
-<div class="container px-4 py-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        {{ range ( where .Site.RegularPages "Type" "projects" ) }}
-        <div class="col">
-            <div class="card">
-                <img src="/assets/img/logo.svg" width="200" height="200" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ .Title }}</h5>
-                    <p class="card-text">some info about it</p>
-                    <button type="button" class="btn btn-bd-orange" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        View Work →
-                    </button>
+    <div class="container px-4 py-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {{ range ( where .Site.RegularPages "Type" "projects" ) }}
+            <div class="col">
+                <div class="card">
+                    <img src="/assets/img/logo.svg" width="200" height="200" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ .Title }}</h5>
+                        <p class="card-text">{{ .Params.tech }}</p>
+                        <button type="button" class="btn btn-bd-orange" data-bs-toggle="modal"
+                            data-bs-target="#{{ .Params.model }}">
+                            View Work →
+                        </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ .Title }}</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {{ .Content }}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-bd-orange">Github Repo</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="{{ .Params.model }}" tabindex="-1"
+                            aria-labelledby="{{ .Params.model }}Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="{{ .Params.model_text }}Label">{{ .Title }}
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ .Content }}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <a href="{{.Params.github}}" type="button" class="btn btn-bd-orange"
+                                            target="_blank">Github Repo</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {{ end }}
         </div>
-        {{ end }}
     </div>
 </div>
