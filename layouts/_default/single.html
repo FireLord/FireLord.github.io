@@ -1,13 +1,13 @@
-{{- define "main"  }}
-<div class="container">
-    <div class="card" style="width: 18rem;">
-      <img src="/assets/img/3d-human-cat-removebg.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{ .Title }}</h5>
-        <p class="card-text">{{ .Content }}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+{{- define "main" }}
 
-  </div>
-  {{- end }}
+<body class="color-light-black pt-5">
+    {{- partial "navbar.html" . -}}
+    <div class="container col-xxl-6 px-5 pt-5 mt-5 text-light">
+        <h1 class="color-orange fw-bold">{{ .Title }}</h1>
+        <h6 class="color-off-white pb-5">{{ humanize .Date.Day }} of {{ .Date.Format "January 2006" }}</h6>
+        <span class="fs-4">
+            {{ .Content}}
+        </span>
+    <div>
+</body>
+{{- end }}
