@@ -2,7 +2,7 @@
 <div class="pt-5 pb-5" id="scrollspyHeading1">
     <div class="container pt-5 pb-5">
         <h1 class="text-light display-1 fw-bold lh-1 text-center pt-4 pb-4">Aman Kumar</h1>
-        <h4 class="color-orange display-5 text-center">I'm a Developer</h4>
+        <h4 class="text-light display-5 text-center">I'm a <span class="role color-orange"></span></h4>
         <img src="/assets/img/3d-human-cat-removebg.webp" class="d-block mx-auto pt-5 img-fluid" width="400"
             height="600" alt="3d human cat">
         <p class="text-light fw-normal text-center pt-5" style="font-size: 3.2vw;">
@@ -12,3 +12,20 @@
         </p>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typeData = new Typed(".role", {
+        strings: [
+            "Developer",
+            "Student",
+            "UI-UX Designer",
+            "App Developer",
+            "Bootstrap developer"
+        ],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1000,
+    });
+</script>
