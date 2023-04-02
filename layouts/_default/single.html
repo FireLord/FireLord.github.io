@@ -2,12 +2,18 @@
 
 <body class="color-light-black pt-5">
     {{- partial "navbar.html" . -}}
-    <div class="container col-xxl-6 px-5 pt-5 mt-5 text-light">
+    <div class="container col-xxl-6 px-5 pt-5 mt-5 text-light mb-5">
         <h1 class="color-orange fw-bold">{{ .Title }}</h1>
         <h6 class="color-off-white pb-5">{{ humanize .Date.Day }} of {{ .Date.Format "January 2006" }}</h6>
         <span class="fs-4">
             {{ .Content}}
         </span>
-    <div>
+        {{ if .Params.youtube}}
+        <div class="ratio ratio-16x9 ">
+            <iframe src="{{ .Params.youtube }}" title="YouTube video"
+                allowfullscreen></iframe>
+        </div>
+        {{ end }}
+    </div>
 </body>
 {{- end }}
