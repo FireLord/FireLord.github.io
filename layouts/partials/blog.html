@@ -13,7 +13,8 @@
             <div class="card text-bg-dark">
                 <div class="card-body">
                     <h4 class="card-title fw-bold">{{ .Title }}</h4>
-                    <p class="card-text">{{ .Content }}</p>
+                    <h6 class="color-off-white">{{ humanize .Date.Day }} of {{ .Date.Format "January 2006" }}</h6>
+                    <p class="card-text">{{ .Content | truncate 200 }}</p>
                     <a href="{{ .RelPermalink }}" class="btn btn-bd-orange">Read more → </a>
                 </div>
             </div>
