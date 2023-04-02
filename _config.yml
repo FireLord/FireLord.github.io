@@ -7,7 +7,3 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
-
- # Plug-ins
-plugins:
-  - jekyll-sitemap # Creates a sitemap using the official Jekyll sitemap gem
