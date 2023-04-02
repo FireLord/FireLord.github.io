@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Aman Kumar" />
     {{ if .IsHome }}
-    <meta name="description" content="Hi! This is Aman Kumar's portfolio website, here I post about my project demos and blogs" />
+    <meta name="description" content="{{ .Description }}" />
     {{ else }}
     <meta name="description" content="{{ .Content | truncate 100 }}" />
     {{ end }}
