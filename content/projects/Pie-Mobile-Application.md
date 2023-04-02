@@ -4,7 +4,7 @@ date: 2023-04-02T14:39:52+05:30
 draft: false
 github: https://github.com/FireLord/pie
 tech: kotlin | graphs | MPAndroidChart
-img:
+img: pie.png
 ---
 - Made using kotlin
 - Simple App to show bar graph and pie chart on android

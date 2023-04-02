@@ -4,7 +4,7 @@ date: 2023-04-02T14:36:23+05:30
 draft: false
 github: https://forum.xda-developers.com/t/rom-7-1-2-unofficial-%20lineageos-14-1.3536834/
 tech: c | makefile | xml
-img:
+img: lenovo-p2.png
 ---
 - Made a firmware for android device to enhance its performance. 
 - Used LineageOS for whole android OS source.

@@ -4,7 +4,7 @@ date: 2023-04-02T14:38:33+05:30
 draft: false
 github: https://github.com/FireLord/socialx
 tech: kotlin | MVVM | firebase
-img:
+img: news-app.png
 ---
 - Made using kotlin and following business logic
 - MVVM to setup everything in the project.
