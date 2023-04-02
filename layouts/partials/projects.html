@@ -12,7 +12,7 @@
             {{ range ( where .Site.RegularPages "Type" "projects" ) }}
             <div class="col">
                 <div class="card">
-                    <img src="/assets/img/logo.svg" width="200" height="200" class="card-img-top" alt="...">
+                    <img src="/assets/img/{{ .Params.img }}" width="200" height="200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ .Title }}</h5>
                         <p class="card-text">{{ .Params.tech }}</p>
