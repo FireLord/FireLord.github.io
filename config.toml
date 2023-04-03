@@ -1,4 +1,4 @@
-baseURL = 'http://firelord.github.io'
+baseURL = 'https://theamankumar.tech'
 languageCode = 'en-us'
 title = 'Home'
 [markup.highlight]
