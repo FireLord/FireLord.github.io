@@ -7,7 +7,7 @@ youtube:
 
 ### Introduction
 
-I recently completed an internship at [Oasis](oasisinfobyte.com) for web development and design role, and I am excited to share my experience with you. During my time with this company, I had the opportunity to learn and work with some of the most talented developers and designers in the industry. In this blog, I will discuss my experience working with this company, what I learned, and why I would highly recommend this company to anyone looking for an internship in web development and design.
+I recently completed an internship at [Oasis](https://oasisinfobyte.com) for web development and design role, and I am excited to share my experience with you. During my time with this company, I had the opportunity to learn and work with some of the most talented developers and designers in the industry. In this blog, I will discuss my experience working with this company, what I learned, and why I would highly recommend this company to anyone looking for an internship in web development and design.
 
 ### My Experience
 
@@ -35,7 +35,7 @@ In addition, the company offers a supportive and inclusive work environment, whi
 
 ### Conclusion
 
-In conclusion, my internship experience with [Oasis](oasisinfobyte.com) company was outstanding. I learned a great deal about web development and design, gained valuable experience working on a range of projects, and was supported by a talented and collaborative team. I would highly recommend this company to anyone looking for an internship in this industry.
+In conclusion, my internship experience with [Oasis](https://oasisinfobyte.com) company was outstanding. I learned a great deal about web development and design, gained valuable experience working on a range of projects, and was supported by a talented and collaborative team. I would highly recommend this company to anyone looking for an internship in this industry.
 
 
 
