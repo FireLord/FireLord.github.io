@@ -8,7 +8,7 @@ img: weathering.png
 ---
 A weather app but with beautiful artwork. These artworks are made by me with suggestions from various people to make it look perfect.
 - Made using kotlin and following business logic MVVM to setup everything in the project.
-- It uses Gson to load images
+- It uses Glide to load images
 - Has LeakCanary to show if there is any memory leak during the debug mode.
 - Use openWeatherApi to show weather data and a toggle to switch between dark and light mode.
 - Illustration are crafted by me.
