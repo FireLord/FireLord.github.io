@@ -1,5 +1,5 @@
 ---
-title: "Trakeat"
+title: "TrakEat - Calories Tracker"
 date: 2024-01-13T14:40:10+05:30
 draft: false
 github:
