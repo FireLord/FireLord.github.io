@@ -3,28 +3,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Aman Kumar" />
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="Aman Kumar, portfolio, iOS developer, Android developer, SwiftUI, Kotlin, KMP, mobile app development, firelord, FireLord, Software Engineer">
+
+    <!-- Page-specific meta description for SEO -->
     {{ if .IsHome }}
-    <meta name="description" content="Hi! This is Aman Kumar's portfolio website, here I post about my project demos and blogs" />
+    <meta name="description" content="Hi! This is Aman Kumar's portfolio website, featuring project demos, blogs, and insights on mobile app development." />
     {{ else }}
     <meta name="description" content="{{ .Content | truncate 100 }}" />
     {{ end }}
-    <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg" />    
+
+    <!-- Open Graph (OG) Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FireLord | {{ .Title }}">
+    <meta property="og:description" content="{{ if .IsHome }}Hi! This is Aman Kumar's portfolio website, featuring project demos, blogs, and insights on mobile app development.{{ else }}{{ .Content | truncate 100 }}{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ .Site.Params.ogImage | default "/assets/img/website-main.png" }}">
+    <meta property="og:site_name" content="Aman Kumar Portfolio">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@FireLord_Aman">
+    <meta name="twitter:title" content="FireLord | {{ .Title }}">
+    <meta name="twitter:description" content="{{ if .IsHome }}Hi! This is Aman Kumar's portfolio website, featuring project demos, blogs, and insights on mobile app development.{{ else }}{{ .Content | truncate 100 }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.Params.ogImage | default "/assets/img/website-main.png" }}">
+
+    <!-- Favicon and Stylesheets -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/dracula.min.css">
+    <link rel="stylesheet" href="/css/style.css" >
 
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ba58ea4062.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/dracula.min.css">
-    
-    <link href="/css/style.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PX3DT2L2C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-0PX3DT2L2C');
     </script>
+
     <title>FireLord | {{ .Title }}</title>
 </head>
