@@ -55,11 +55,12 @@ Firebase App Check uses a token-based approach to verify that requests originate
             let providerFactory = AppCheckDebugProviderFactory()
             AppCheck.setAppCheckProviderFactory(providerFactory)
         #else
-            AppCheck.setAppCheckProviderFactory(CapCapAppCheckProviderFactory())
+            AppCheck.setAppCheckProviderFactory(YourAppCheckProviderFactory())
         #endif
      }
      ```
-5. Now you can use token to send to your firebase functions.
+5. Enable `App Attest` capability in the Xcode project from Signing & Capabilities.
+6. Now you can use token to send to your firebase functions.
    - Step 1: create header in your firebase function to send the token.
      - header name: `x-firebase-appcheck`
    - Step 2: send the token in your firebase function.
@@ -92,7 +93,7 @@ Firebase App Check uses a token-based approach to verify that requests originate
             }
         }
      ```
-6. During development, you will have to register your debug token in the firebase console.
+7. During development, you will have to register your debug token in the firebase console.
    - Step 1: In Xcode enable firebase debug mode. [Firebase DebugView](https://firebase.google.com/docs/analytics/debugview)
    - Step 2: Search for `Firebase App Check` in the logs.
    - Step 3: Copy the token from the logs.
