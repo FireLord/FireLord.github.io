@@ -1,7 +1,5 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 
-import { CatGlyph } from "@/components/cat-glyph";
 import { JourneyTimeline } from "@/components/journey-timeline";
 import { BLOG_PAGE_SIZE, getBlogPosts } from "@/lib/blog";
 
@@ -138,16 +136,16 @@ export default function Home() {
           className="absolute inset-x-0 -top-40 h-[480px] pointer-events-none"
           style={{ background: "var(--gradient-fade)" }}
         />
-        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-6 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-16">
-          <div>
+        <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl items-center justify-center px-6 py-16">
+          <div className="mx-auto max-w-3xl text-center">
             <Mono className="text-muted-foreground">
               <span className="text-[color:var(--ember)]">●</span> available ·
               founding engineer @ inspire dev studio
             </Mono>
-            <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[0.95]">
+            <h1 className="mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
               Aman Kumar.
             </h1>
-            <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-8 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
               Software Engineer building mobile products, SDKs and AI-powered
               tools. Currently Founding Engineer at{" "}
               <span className="text-foreground">Inspire Dev Studio</span>.
@@ -155,7 +153,7 @@ export default function Home() {
               way into iOS, backend systems, SDKs and AI-native products.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-md bg-foreground text-background px-4 py-2.5 text-[13px] font-medium hover:opacity-90 transition"
@@ -178,7 +176,7 @@ export default function Home() {
             </div>
 
             {/* stack */}
-            <div className="mt-12 flex flex-wrap gap-2">
+            <div className="mt-12 flex flex-wrap justify-center gap-2">
               {STACK.map((s) => (
                 <span
                   key={s}
@@ -187,60 +185,6 @@ export default function Home() {
                   {s}
                 </span>
               ))}
-            </div>
-          </div>
-
-          {/* profile card */}
-          <div className="relative">
-            <div className="relative rounded-2xl border border-border bg-surface/60 p-3 shadow-[var(--shadow-card)]">
-              <div
-                className="absolute -inset-px rounded-2xl pointer-events-none opacity-60"
-                style={{
-                  background:
-                    "linear-gradient(180deg, oklch(0.705 0.175 48 / 0.15), transparent 40%)",
-                  mask: "linear-gradient(black, black) content-box, linear-gradient(black, black)",
-                  WebkitMask:
-                    "linear-gradient(black, black) content-box, linear-gradient(black, black)",
-                }}
-              />
-              <div className="relative overflow-hidden rounded-xl">
-                <Image
-                  src="/aman-portrait.jpg"
-                  alt="Aman Kumar at his desk with a cat"
-                  width={896}
-                  height={1152}
-                  loading="eager"
-                  className="w-full h-auto object-cover"
-                />
-                {/* meta strip */}
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-[13px] font-medium">Aman Kumar</div>
-                      <Mono className="text-muted-foreground">/amankumar</Mono>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--ember)] shadow-[0_0_12px_var(--ember)]" />
-                      <Mono className="text-muted-foreground">building</Mono>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* card footer */}
-              <div className="mt-3 flex items-center justify-between px-2 pb-1">
-                <Mono className="text-muted-foreground">india · ist</Mono>
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <CatGlyph className="h-3.5 w-3.5 text-[color:var(--ember)]" />
-                  <Mono>+1 supervisor</Mono>
-                </div>
-              </div>
-            </div>
-
-            {/* peeking cat */}
-            <div className="absolute -right-3 -top-3 hidden sm:flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 shadow-[var(--shadow-card)]">
-              <CatGlyph className="h-4 w-4 text-[color:var(--ember)]" />
-              <Mono className="text-muted-foreground">approved</Mono>
             </div>
           </div>
         </div>
