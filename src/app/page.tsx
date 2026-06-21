@@ -129,8 +129,11 @@ export default function Home() {
       >
         <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
         <div
-          className="absolute inset-x-0 -top-40 h-[480px] pointer-events-none"
-          style={{ background: "var(--gradient-fade)" }}
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 45% at 50% 0%, oklch(0.705 0.175 48 / 0.12), oklch(0.705 0.175 48 / 0.045) 38%, transparent 74%)",
+          }}
         />
         <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-6 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-16">
           <div>
