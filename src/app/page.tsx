@@ -356,12 +356,12 @@ export default function Home() {
                   href={c.href}
                   target={c.external ? "_blank" : undefined}
                   rel={c.external ? "noreferrer" : undefined}
-                  className="group flex items-center justify-between rounded-lg border border-border bg-background/40 px-4 py-3 hover:border-[color:var(--ember)]/40 transition-colors"
+                  className="group flex min-w-0 flex-col gap-1 rounded-lg border border-border bg-background/40 px-4 py-3 transition-colors hover:border-[color:var(--ember)]/40 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
                 >
                   <Mono className="text-muted-foreground">
                     {c.label.toLowerCase()}
                   </Mono>
-                  <span className="text-[14px] group-hover:text-[color:var(--ember)] transition-colors">
+                  <span className="min-w-0 break-all text-[14px] transition-colors group-hover:text-[color:var(--ember)] sm:text-right">
                     {c.value} ↗
                   </span>
                 </a>
