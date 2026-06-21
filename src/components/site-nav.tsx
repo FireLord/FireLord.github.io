@@ -58,7 +58,8 @@ export function useActiveHref(items: NavItem[]) {
           (window.scrollY + window.innerHeight);
 
         if (distanceToBottom < 80) {
-          nextActive = sectionItems.at(-1)?.href ?? nextActive;
+          nextActive =
+            sectionItems[sectionItems.length - 1]?.href ?? nextActive;
         }
 
         setActiveHref(nextActive);

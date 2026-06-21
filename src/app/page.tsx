@@ -272,14 +272,16 @@ export default function Home() {
               AI-native workflows that make all of it move faster.
             </p>
           </div>
-          <div className="grid w-full max-w-sm grid-cols-2 gap-3 justify-self-start lg:justify-self-end">
+          <div className="grid w-full max-w-2xl grid-cols-2 gap-3 justify-self-stretch max-[340px]:grid-cols-1 lg:max-w-sm lg:justify-self-end">
             {STATUS.map((s) => (
               <div
                 key={s.label}
-                className="rounded-xl border border-border bg-surface/60 p-4 transition-colors hover:border-foreground/20 hover:bg-surface"
+                className="min-w-0 rounded-xl border border-border bg-surface/60 p-4 transition-colors hover:border-foreground/20 hover:bg-surface"
               >
                 <div className="text-2xl">{s.icon}</div>
-                <div className="mt-3 text-[13px] font-medium">{s.label}</div>
+                <div className="mt-3 min-w-0 text-[13px] leading-snug font-medium break-words">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
