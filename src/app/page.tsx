@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CatGlyph } from "@/components/cat-glyph";
+import { JourneyTimeline } from "@/components/journey-timeline";
 import { BLOG_PAGE_SIZE, getBlogPosts } from "@/lib/blog";
 
 /* --------------------------------- data ---------------------------------- */
@@ -284,31 +285,7 @@ export default function Home() {
           <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] mb-12">
             Journey
           </h3>
-          <ol className="relative border-l border-border ml-3">
-            {JOURNEY.map((j, index) => (
-              <li key={j.year} className="relative pl-8 pb-5 last:pb-0 group">
-                <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-background border border-border group-hover:border-[color:var(--ember)] group-hover:shadow-[0_0_14px_var(--ember)] transition-all" />
-                <div className="rounded-lg border border-border bg-surface/40 p-5 transition-colors hover:border-[color:var(--ember)]/35 hover:bg-surface/70">
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div className="flex items-baseline gap-4 flex-wrap">
-                      <Mono className="text-[color:var(--ember)] w-16 shrink-0">
-                        {j.year}
-                      </Mono>
-                      <h4 className="text-[17px] font-medium tracking-tight">
-                        {j.title}
-                      </h4>
-                    </div>
-                    <Mono className="text-muted-foreground">
-                      {String(index + 1).padStart(2, "0")}
-                    </Mono>
-                  </div>
-                  <p className="mt-2 text-[14px] text-muted-foreground max-w-2xl">
-                    {j.note}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <JourneyTimeline items={JOURNEY} />
         </div>
       </Section>
 
