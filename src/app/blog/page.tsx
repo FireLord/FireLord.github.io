@@ -112,21 +112,8 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           ))}
         </ul>
 
-        <nav className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          {hasPrevious ? (
-            <Link
-              href={getBlogPageHref(requestedPage - 1)}
-              className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)]"
-            >
-              ← Previous
-            </Link>
-          ) : (
-            <span className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-surface/30 px-4 py-2.5 text-[13px] text-muted-foreground opacity-50">
-              ← Previous
-            </span>
-          )}
-
-          <div className="flex flex-wrap items-center gap-2">
+        <nav className="mt-8 grid gap-4 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+          <div className="order-1 flex flex-wrap items-center justify-center gap-2 sm:order-2">
             {Array.from({ length: totalPages }, (_, index) => {
               const page = index + 1;
               const active = page === requestedPage;
@@ -148,18 +135,33 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             })}
           </div>
 
-          {hasNext ? (
-            <Link
-              href={getBlogPageHref(requestedPage + 1)}
-              className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)] sm:justify-self-end"
-            >
-              Next →
-            </Link>
-          ) : (
-            <span className="inline-flex w-fit items-center gap-2 rounded-md border border-border bg-surface/30 px-4 py-2.5 text-[13px] text-muted-foreground opacity-50 sm:justify-self-end">
-              Next →
-            </span>
-          )}
+          <div className="order-2 grid grid-cols-2 gap-3 sm:contents">
+            {hasPrevious ? (
+              <Link
+                href={getBlogPageHref(requestedPage - 1)}
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)] sm:order-1 sm:w-fit"
+              >
+                ← Previous
+              </Link>
+            ) : (
+              <span className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-surface/30 px-4 py-2.5 text-[13px] text-muted-foreground opacity-50 sm:order-1 sm:w-fit">
+                ← Previous
+              </span>
+            )}
+
+            {hasNext ? (
+              <Link
+                href={getBlogPageHref(requestedPage + 1)}
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)] sm:order-3 sm:w-fit sm:justify-self-end"
+              >
+                Next →
+              </Link>
+            ) : (
+              <span className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-surface/30 px-4 py-2.5 text-[13px] text-muted-foreground opacity-50 sm:order-3 sm:w-fit sm:justify-self-end">
+                Next →
+              </span>
+            )}
+          </div>
         </nav>
       </div>
     </main>
