@@ -1,4 +1,5 @@
 import { MobileNav } from "@/components/mobile-nav";
+import { SiteNav } from "@/components/site-nav";
 
 const NAV = [
   { label: "About", href: "/#about" },
@@ -16,17 +17,7 @@ export function SiteHeader() {
             Aman Kumar
           </span>
         </a>
-        <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        <SiteNav items={NAV} />
         <MobileNav items={NAV} />
       </div>
     </header>
