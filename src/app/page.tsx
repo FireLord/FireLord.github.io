@@ -1,13 +1,14 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+import { MobileNav } from "@/components/mobile-nav";
+
 /* --------------------------------- data ---------------------------------- */
 
 const NAV = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
-  { label: "Writing", href: "#writing" },
-  { label: "Journey", href: "#journey" },
+  { label: "Highlights", href: "#highlights" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -118,33 +119,6 @@ const JOURNEY = [
   },
 ];
 
-const PROJECTS = [
-  { name: "Android ROM Development", tag: "AOSP" },
-  { name: "Custom Kernel Work", tag: "Linux" },
-  { name: "XDA Contributions", tag: "Community" },
-  { name: "JotDown KMP", tag: "Kotlin Multiplatform" },
-  { name: "Open Source Contributions", tag: "GitHub" },
-  { name: "SwiftUI Experiments", tag: "Apple" },
-  { name: "College Projects", tag: "Foundations" },
-  { name: "Side Projects", tag: "Always shipping" },
-];
-
-const WRITING = [
-  { title: "Building an iOS SDK", read: "8 min", date: "2025.03" },
-  {
-    title: "Creating XCFrameworks the right way",
-    read: "6 min",
-    date: "2025.02",
-  },
-  { title: "SwiftUI + UIKit in production", read: "11 min", date: "2024.11" },
-  { title: "Building real-time chat systems", read: "14 min", date: "2024.09" },
-  {
-    title: "An AI-assisted development workflow",
-    read: "9 min",
-    date: "2024.07",
-  },
-];
-
 /* ------------------------------- components ------------------------------ */
 
 function Mono({
@@ -201,9 +175,6 @@ export default function Home() {
             <span className="text-[15px] font-semibold tracking-tight">
               Aman Kumar
             </span>
-            <span className="font-mono text-[11px] text-muted-foreground">
-              Software Engineer
-            </span>
           </a>
           <nav className="hidden md:flex items-center gap-8">
             {NAV.map((n) => (
@@ -216,17 +187,7 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <button
-            className="group inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-2.5 py-1.5 hover:border-[color:var(--ember)]/40 hover:bg-surface transition-colors"
-            aria-label="Open command palette"
-          >
-            <span className="text-[12px] text-muted-foreground group-hover:text-foreground">
-              Search
-            </span>
-            <kbd className="font-mono text-[10px] text-muted-foreground border border-border rounded px-1.5 py-0.5 bg-background">
-              ⌘K
-            </kbd>
-          </button>
+          <MobileNav items={NAV} />
         </div>
       </header>
 
@@ -308,6 +269,7 @@ export default function Home() {
                   alt="Aman Kumar at his desk with a cat"
                   width={896}
                   height={1152}
+                  loading="eager"
                   className="w-full h-auto object-cover"
                 />
                 {/* meta strip */}
@@ -379,6 +341,29 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div className="mt-24">
+          <h3 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] mb-12">
+            Journey
+          </h3>
+          <ol className="relative border-l border-border ml-3">
+            {JOURNEY.map((j) => (
+              <li key={j.year} className="relative pl-8 pb-10 last:pb-0 group">
+                <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-background border border-border group-hover:border-[color:var(--ember)] group-hover:shadow-[0_0_14px_var(--ember)] transition-all" />
+                <div className="flex items-baseline gap-4 flex-wrap">
+                  <Mono className="text-[color:var(--ember)] w-16 shrink-0">
+                    {j.year}
+                  </Mono>
+                  <h4 className="text-[17px] font-medium tracking-tight">
+                    {j.title}
+                  </h4>
+                </div>
+                <p className="mt-2 text-[14px] text-muted-foreground max-w-xl">
+                  {j.note}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
 
       {/* Featured Work */}
@@ -447,82 +432,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Journey */}
-      <Section id="journey" label="04" title="Journey">
-        <ol className="relative border-l border-border ml-3">
-          {JOURNEY.map((j) => (
-            <li key={j.year} className="relative pl-8 pb-10 last:pb-0 group">
-              <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-background border border-border group-hover:border-[color:var(--ember)] group-hover:shadow-[0_0_14px_var(--ember)] transition-all" />
-              <div className="flex items-baseline gap-4 flex-wrap">
-                <Mono className="text-[color:var(--ember)] w-16 shrink-0">
-                  {j.year}
-                </Mono>
-                <h3 className="text-[17px] font-medium tracking-tight">
-                  {j.title}
-                </h3>
-              </div>
-              <p className="mt-2 text-[14px] text-muted-foreground max-w-xl">
-                {j.note}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* Projects */}
-      <Section id="projects" label="05" title="Projects & Open Source">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {PROJECTS.map((p) => (
-            <a
-              key={p.name}
-              href="#"
-              className="group rounded-xl border border-border bg-surface/40 p-5 hover:border-foreground/30 hover:bg-surface transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <Mono className="text-muted-foreground">{p.tag}</Mono>
-                <span className="text-muted-foreground group-hover:text-[color:var(--ember)] transition-colors">
-                  ↗
-                </span>
-              </div>
-              <div className="mt-6 text-[15px] font-medium tracking-tight">
-                {p.name}
-              </div>
-            </a>
-          ))}
-        </div>
-      </Section>
-
-      {/* Writing */}
-      <Section id="writing" label="06" title="Writing">
-        <ul className="divide-y divide-border border-y border-border">
-          {WRITING.map((w) => (
-            <li key={w.title}>
-              <a
-                href="#"
-                className="group flex items-center justify-between gap-6 py-5 hover:text-[color:var(--ember)] transition-colors"
-              >
-                <div className="flex items-center gap-6 min-w-0">
-                  <Mono className="text-muted-foreground w-16 shrink-0">
-                    {w.date}
-                  </Mono>
-                  <span className="text-[15px] font-medium tracking-tight truncate">
-                    {w.title}
-                  </span>
-                </div>
-                <div className="flex items-center gap-4 shrink-0">
-                  <Mono className="text-muted-foreground">{w.read}</Mono>
-                  <span className="text-muted-foreground group-hover:text-[color:var(--ember)] group-hover:translate-x-0.5 transition-all">
-                    →
-                  </span>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       {/* Contact */}
-      <Section id="contact" label="07" title="Contact">
+      <Section id="contact" label="04" title="Contact">
         <div className="rounded-2xl border border-border bg-surface/60 p-8 lg:p-12 relative overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none opacity-60"
