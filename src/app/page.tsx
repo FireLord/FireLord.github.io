@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/mobile-nav";
 const NAV = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Highlights", href: "#highlights" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -192,13 +192,16 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative overflow-hidden">
+      <section
+        id="top"
+        className="relative min-h-[calc(100svh-4rem)] scroll-mt-16 overflow-hidden"
+      >
         <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" />
         <div
           className="absolute inset-x-0 -top-40 h-[480px] pointer-events-none"
           style={{ background: "var(--gradient-fade)" }}
         />
-        <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-28 lg:pt-32 lg:pb-40 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
+        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-6 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-16">
           <div>
             <Mono className="text-muted-foreground">
               <span className="text-[color:var(--ember)]">●</span> available ·
@@ -346,20 +349,27 @@ export default function Home() {
             Journey
           </h3>
           <ol className="relative border-l border-border ml-3">
-            {JOURNEY.map((j) => (
-              <li key={j.year} className="relative pl-8 pb-10 last:pb-0 group">
+            {JOURNEY.map((j, index) => (
+              <li key={j.year} className="relative pl-8 pb-5 last:pb-0 group">
                 <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-background border border-border group-hover:border-[color:var(--ember)] group-hover:shadow-[0_0_14px_var(--ember)] transition-all" />
-                <div className="flex items-baseline gap-4 flex-wrap">
-                  <Mono className="text-[color:var(--ember)] w-16 shrink-0">
-                    {j.year}
-                  </Mono>
-                  <h4 className="text-[17px] font-medium tracking-tight">
-                    {j.title}
-                  </h4>
+                <div className="rounded-lg border border-border bg-surface/40 p-5 transition-colors hover:border-[color:var(--ember)]/35 hover:bg-surface/70">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="flex items-baseline gap-4 flex-wrap">
+                      <Mono className="text-[color:var(--ember)] w-16 shrink-0">
+                        {j.year}
+                      </Mono>
+                      <h4 className="text-[17px] font-medium tracking-tight">
+                        {j.title}
+                      </h4>
+                    </div>
+                    <Mono className="text-muted-foreground">
+                      {String(index + 1).padStart(2, "0")}
+                    </Mono>
+                  </div>
+                  <p className="mt-2 text-[14px] text-muted-foreground max-w-2xl">
+                    {j.note}
+                  </p>
                 </div>
-                <p className="mt-2 text-[14px] text-muted-foreground max-w-xl">
-                  {j.note}
-                </p>
               </li>
             ))}
           </ol>
@@ -410,30 +420,39 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Highlights */}
-      <Section id="highlights" label="03" title="Engineering Highlights">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Blog */}
+      <Section id="blog" label="03" title="Blog">
+        <ul className="divide-y divide-border border-y border-border">
           {HIGHLIGHTS.map((h, i) => (
-            <div
-              key={h.title}
-              className="rounded-xl border border-border bg-surface/40 p-5 hover:bg-surface transition-colors"
-            >
-              <Mono className="text-[color:var(--ember)]">
-                {String(i + 1).padStart(2, "0")}
-              </Mono>
-              <h3 className="mt-3 text-[15px] font-medium tracking-tight">
-                {h.title}
-              </h3>
-              <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
-                {h.body}
-              </p>
-            </div>
+            <li key={h.title}>
+              <a
+                href="#"
+                className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-[color:var(--ember)]"
+              >
+                <div className="flex min-w-0 gap-6">
+                  <Mono className="w-10 shrink-0 text-[color:var(--ember)]">
+                    {String(i + 1).padStart(2, "0")}
+                  </Mono>
+                  <div>
+                    <h3 className="text-[15px] font-medium tracking-tight">
+                      {h.title}
+                    </h3>
+                    <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-muted-foreground">
+                      {h.body}
+                    </p>
+                  </div>
+                </div>
+                <span className="shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-[color:var(--ember)]">
+                  →
+                </span>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </Section>
 
       {/* Contact */}
-      <Section id="contact" label="04" title="Contact">
+      <Section id="contact" label="04" title="Contact" minScreen={false}>
         <div className="rounded-2xl border border-border bg-surface/60 p-8 lg:p-12 relative overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none opacity-60"
@@ -474,7 +493,7 @@ export default function Home() {
       </Section>
 
       {/* Footer */}
-      <footer className="mt-24 border-t border-border">
+      <footer className="border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <CatGlyph className="h-5 w-5 text-[color:var(--ember)]" />
@@ -499,17 +518,22 @@ function Section({
   label,
   title,
   children,
+  minScreen = true,
 }: {
   id: string;
   label: string;
   title: string;
   children: ReactNode;
+  minScreen?: boolean;
 }) {
   return (
-    <section id={id} className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-24 lg:py-28">
+    <section
+      id={id}
+      className={`relative scroll-mt-16 ${minScreen ? "min-h-[calc(100svh-4rem)]" : ""}`}
+    >
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:py-20">
         <SectionLabel index={label}>{title}</SectionLabel>
-        <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] mb-12">
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] mb-8">
           {title}
         </h2>
         {children}
