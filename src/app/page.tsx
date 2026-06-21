@@ -25,6 +25,7 @@ const LINKS = {
   github: "https://github.com/FireLord",
   linkedin: "https://www.linkedin.com/in/amankumar035",
   email: "mailto:amankumarmicro@gmail.com",
+  inspire: "https://www.inspiredevstudio.com/",
 };
 
 const WORK = [
@@ -132,18 +133,32 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl items-center justify-center px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <Mono className="text-muted-foreground">
-              <span className="text-[color:var(--ember)]">●</span> available ·
-              founding engineer @ inspire dev studio
+              founding engineer @{" "}
+              <a
+                href={LINKS.inspire}
+                target="_blank"
+                rel="noreferrer"
+                className="text-foreground transition-colors hover:text-[color:var(--ember)]"
+              >
+                inspire dev studio
+              </a>
             </Mono>
             <h1 className="mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
-              Aman Kumar.
+              Aman Kumar<span className="text-[color:var(--ember)]">.</span>
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
               Software Engineer building mobile products, SDKs and AI-powered
               tools. Currently Founding Engineer at{" "}
-              <span className="text-foreground">Inspire Dev Studio</span>.
-              Started with Android ROMs and open source, and eventually found my
-              way into iOS, backend systems, SDKs and AI-native products.
+              <a
+                href={LINKS.inspire}
+                target="_blank"
+                rel="noreferrer"
+                className="text-foreground underline-offset-4 transition-colors hover:text-[color:var(--ember)] hover:underline"
+              >
+                Inspire Dev Studio
+              </a>
+              . Started with Android ROMs and open source, and eventually found
+              my way into iOS, backend systems, SDKs and AI-native products.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
