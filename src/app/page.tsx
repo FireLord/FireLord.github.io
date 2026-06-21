@@ -1,5 +1,7 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
+import { CatGlyph } from "@/components/cat-glyph";
 import { BLOG_PAGE_SIZE, getBlogPosts } from "@/lib/blog";
 
 /* --------------------------------- data ---------------------------------- */
@@ -130,8 +132,8 @@ export default function Home() {
           className="absolute inset-x-0 -top-40 h-[480px] pointer-events-none"
           style={{ background: "var(--gradient-fade)" }}
         />
-        <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl items-center justify-center px-6 py-16">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-6 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-16">
+          <div>
             <Mono className="text-muted-foreground">
               founding engineer @{" "}
               <a
@@ -143,10 +145,10 @@ export default function Home() {
                 inspire dev studio
               </a>
             </Mono>
-            <h1 className="mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
+            <h1 className="mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               Aman Kumar<span className="text-[color:var(--ember)]">.</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
               Software Engineer building mobile products, SDKs and AI-powered
               tools. Currently Founding Engineer at{" "}
               <a
@@ -161,7 +163,7 @@ export default function Home() {
               my way into iOS, backend systems, SDKs and AI-native products.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href={RESUME_URL}
                 target="_blank"
@@ -188,7 +190,7 @@ export default function Home() {
             </div>
 
             {/* stack */}
-            <div className="mt-12 flex flex-wrap justify-center gap-2">
+            <div className="mt-12 flex flex-wrap gap-2">
               {STACK.map((s) => (
                 <span
                   key={s}
@@ -197,6 +199,48 @@ export default function Home() {
                   {s}
                 </span>
               ))}
+            </div>
+          </div>
+
+          {/* profile card */}
+          <div className="relative">
+            <div className="relative rounded-2xl border border-border bg-surface/60 p-3 shadow-[var(--shadow-card)]">
+              <div
+                className="absolute -inset-px rounded-2xl pointer-events-none opacity-60"
+                style={{
+                  background:
+                    "linear-gradient(180deg, oklch(0.705 0.175 48 / 0.15), transparent 40%)",
+                  mask: "linear-gradient(black, black) content-box, linear-gradient(black, black)",
+                  WebkitMask:
+                    "linear-gradient(black, black) content-box, linear-gradient(black, black)",
+                }}
+              />
+              <div className="relative overflow-hidden rounded-xl">
+                <Image
+                  src="/aman-avatar-orange-cat.png"
+                  alt="3D cartoon avatar of Aman Kumar wearing specs with light stubble and holding an orange cat with white paws"
+                  width={1023}
+                  height={1537}
+                  priority
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-[13px] font-medium">Aman Kumar</div>
+                      <Mono className="text-muted-foreground">/FireLord</Mono>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-3 flex items-center justify-between px-2 pb-1">
+                <Mono className="text-muted-foreground">india · ist</Mono>
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <CatGlyph className="h-3.5 w-3.5 text-[color:var(--ember)]" />
+                  <Mono>approved</Mono>
+                </div>
+              </div>
             </div>
           </div>
         </div>
