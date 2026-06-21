@@ -1,0 +1,24 @@
+---
+title: "Building real-time chat systems"
+description: "The boring infrastructure details that make chat feel instant: ordering, retries, backpressure, presence, and delivery state."
+date: "2024.09"
+read: "14 min"
+---
+
+## Real-time is a contract
+
+Users do not care whether a message moved through websockets, queues, or database triggers. They care that it arrives quickly, appears once, and does not reorder itself into nonsense.
+
+That means real-time systems need a contract for ordering, retries, and idempotency before they need fancy live features.
+
+## Backpressure matters early
+
+Mobile clients disconnect. Networks stall. Users send bursts. Translation or moderation pipelines take time.
+
+If every stage assumes the next one is always ready, the system will eventually punish the user for normal behavior.
+
+## Presence is product design
+
+Online indicators, typing states, read receipts, and delivery ticks are not just backend events. They shape trust.
+
+A good chat system chooses which signals are worth showing and which ones should stay invisible.

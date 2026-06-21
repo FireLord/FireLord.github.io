@@ -1,16 +1,10 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-import { MobileNav } from "@/components/mobile-nav";
+import { CatGlyph } from "@/components/cat-glyph";
+import { BLOG_PAGE_SIZE, getBlogPosts } from "@/lib/blog";
 
 /* --------------------------------- data ---------------------------------- */
-
-const NAV = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
-];
 
 const STACK = [
   "SwiftUI",
@@ -51,33 +45,6 @@ const WORK = [
     tag: "iOS · AI Summaries",
     desc: "A news reader that distills stories into swipeable cards. AI summarization pipeline tuned for tone, brevity and source faithfulness.",
     tech: ["swiftui", "openai", "node"],
-  },
-];
-
-const HIGHLIGHTS = [
-  {
-    title: "Custom CALayer caption engine",
-    body: "Built a frame-accurate caption rendering engine on CALayer for precise typography, timing and effects in video.",
-  },
-  {
-    title: "Cross-platform SDKs",
-    body: "Authored and shipped iOS, Android and Web SDKs from a unified source: XCFrameworks, AARs and npm packages.",
-  },
-  {
-    title: "Realtime multilingual messaging",
-    body: "Designed the protocol and infra for live translation across long-lived websocket sessions with backpressure handling.",
-  },
-  {
-    title: "AI translation pipelines",
-    body: "Engineered LLM pipelines with prompt routing, caching and quality evaluation for production translation workloads.",
-  },
-  {
-    title: "Scalable backend systems",
-    body: "Postgres + Redis stacks built for read-heavy mobile clients: partitioning, queues, and observability from day one.",
-  },
-  {
-    title: "Android kernel & ROM internals",
-    body: "Years deep in AOSP, custom kernels and device trees: the foundation underneath everything that came after.",
   },
 ];
 
@@ -151,46 +118,15 @@ function SectionLabel({
   );
 }
 
-function CatGlyph({ className = "" }: { className?: string }) {
-  // small cat silhouette (sitting)
-  return (
-    <svg viewBox="0 0 64 48" className={className} aria-hidden>
-      <path
-        fill="currentColor"
-        d="M8 6l8 10c4-2 8-3 12-3s8 1 12 3l8-10v22c0 8-6 14-14 14h-12c-8 0-14-6-14-14V6zm14 18a2 2 0 100-4 2 2 0 000 4zm20 0a2 2 0 100-4 2 2 0 000 4zm-10 6c-2 0-3 1-3 2s1 2 3 2 3-1 3-2-1-2-3-2z"
-      />
-    </svg>
-  );
-}
-
 /* ---------------------------------- page --------------------------------- */
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
-        <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-baseline gap-2 group">
-            <span className="text-[15px] font-semibold tracking-tight">
-              Aman Kumar
-            </span>
-          </a>
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-[13px] text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-          <MobileNav items={NAV} />
-        </div>
-      </header>
+  const blogPosts = getBlogPosts();
+  const visibleBlogPosts = blogPosts.slice(0, BLOG_PAGE_SIZE);
+  const remainingBlogPosts = blogPosts.length - visibleBlogPosts.length;
 
+  return (
+    <>
       {/* Hero */}
       <section
         id="top"
@@ -423,10 +359,10 @@ export default function Home() {
       {/* Blog */}
       <Section id="blog" label="03" title="Blog">
         <ul className="divide-y divide-border border-y border-border">
-          {HIGHLIGHTS.map((h, i) => (
-            <li key={h.title}>
+          {visibleBlogPosts.map((post, i) => (
+            <li key={post.url}>
               <a
-                href="#"
+                href={post.url}
                 className="group flex items-start justify-between gap-6 py-5 transition-colors hover:text-[color:var(--ember)]"
               >
                 <div className="flex min-w-0 gap-6">
@@ -435,11 +371,20 @@ export default function Home() {
                   </Mono>
                   <div>
                     <h3 className="text-[15px] font-medium tracking-tight">
-                      {h.title}
+                      {post.data.title}
                     </h3>
                     <p className="mt-2 max-w-2xl text-[13.5px] leading-relaxed text-muted-foreground">
-                      {h.body}
+                      {post.data.description}
                     </p>
+                    <div className="mt-3 flex flex-wrap items-center gap-3">
+                      <Mono className="text-muted-foreground">
+                        {post.data.date}
+                      </Mono>
+                      <span className="h-1 w-1 rounded-full bg-border" />
+                      <Mono className="text-muted-foreground">
+                        {post.data.read}
+                      </Mono>
+                    </div>
                   </div>
                 </div>
                 <span className="shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-[color:var(--ember)]">
@@ -449,6 +394,22 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        {remainingBlogPosts > 0 ? (
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/blog?page=2"
+              className="group inline-flex items-center gap-3 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)]"
+            >
+              Load more
+              <Mono className="text-muted-foreground transition-colors group-hover:text-[color:var(--ember)]">
+                {remainingBlogPosts} more
+              </Mono>
+              <span className="text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-[color:var(--ember)]">
+                →
+              </span>
+            </a>
+          </div>
+        ) : null}
       </Section>
 
       {/* Contact */}
@@ -491,25 +452,7 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
-      {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <CatGlyph className="h-5 w-5 text-[color:var(--ember)]" />
-            <div>
-              <div className="text-[13px] font-medium">Aman Kumar</div>
-              <Mono className="text-muted-foreground">
-                built with code, curiosity and occasional feline supervision.
-              </Mono>
-            </div>
-          </div>
-          <Mono className="text-muted-foreground">
-            © {new Date().getFullYear()}
-          </Mono>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
 

@@ -109,6 +109,32 @@
     background-color: oklch(0.705 0.175 48 / 0.3);
     color: var(--color-foreground);
   }
+  .shiki {
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface) !important;
+    padding: 1rem;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .shiki code {
+    display: block;
+    min-width: max-content;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+  .shiki span {
+    color: var(--shiki-dark, inherit);
+  }
+  .shiki .line {
+    display: block;
+    min-height: 1.45rem;
+  }
 }
 
 @utility font-mono {

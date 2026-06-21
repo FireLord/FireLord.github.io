@@ -1,0 +1,24 @@
+---
+title: "SwiftUI + UIKit in production"
+description: "How to combine SwiftUI speed with UIKit escape hatches without creating a split-brain app architecture."
+date: "2024.11"
+read: "11 min"
+---
+
+## Pick ownership boundaries
+
+SwiftUI and UIKit work well together when each layer has a clear job. Problems start when both frameworks try to own navigation, state, layout, and lifecycle at the same time.
+
+For production apps, I prefer choosing boundaries intentionally: SwiftUI for fast product surfaces, UIKit for mature control points, and narrow bridges between them.
+
+## Keep state above the bridge
+
+The framework boundary should not also become the source-of-truth boundary. State belongs somewhere explicit, then both UI systems can render from it.
+
+That makes migrations less risky because screens can move between SwiftUI and UIKit without rewriting the product model every time.
+
+## Use UIKit without guilt
+
+There are still places where UIKit is the right tool: custom text input, video timelines, scroll coordination, and precise layout control.
+
+The trick is to use it deliberately, not apologetically.

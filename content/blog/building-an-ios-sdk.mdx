@@ -1,0 +1,29 @@
+---
+title: "Building an iOS SDK"
+description: "A practical way to think about public APIs, packaging, documentation, and versioning when an SDK has to survive real apps."
+date: "2025.03"
+read: "8 min"
+---
+
+## Start with the call site
+
+An SDK is judged by the code a product engineer has to write at 5pm, not by the cleverness inside the package. I like starting with the smallest possible call site and working backwards from there.
+
+```swift
+let translator = TranslationClient(apiKey: key)
+let result = try await translator.translate(text, to: .spanish)
+```
+
+If that first experience feels stable, predictable, and boring in the best way, the internals can afford to be sophisticated.
+
+## Keep configuration explicit
+
+Hidden global state makes SDKs hard to test and harder to debug. Configuration should usually be passed into a client object, even when that means writing one extra line.
+
+That gives teams a place to control retries, logging, timeouts, auth refresh, and environment selection without wondering where behavior is coming from.
+
+## Treat packaging as product work
+
+The package boundary is part of the user experience. XCFrameworks, Swift Package Manager support, semantic versioning, migration notes, and tiny examples all decide whether the SDK feels trustworthy.
+
+The best SDKs do not only expose capabilities. They reduce the amount of uncertainty around adopting them.

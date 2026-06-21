@@ -1,0 +1,24 @@
+---
+title: "Creating XCFrameworks the right way"
+description: "Notes on shipping Apple binaries that are predictable across simulator, device, CI, and downstream app integrations."
+date: "2025.02"
+read: "6 min"
+---
+
+## Make the artifact boring
+
+The goal of an XCFramework is not to show off a build system. It is to produce a binary that app teams can drop in without learning your release process.
+
+That means device and simulator slices, stable module interfaces, correct signing expectations, and a repeatable archive command.
+
+## Test the consumer path
+
+I always test the final artifact in a clean sample app. Not the source project. Not the internal workspace. The shipped binary.
+
+That catches the problems users actually hit: missing resources, unavailable symbols, module import failures, and architecture mismatches.
+
+## Document the edges
+
+Every binary SDK has edges. Minimum iOS version, Swift version, transitive dependencies, required entitlements, privacy manifests, and initialization order all deserve clear notes.
+
+Good packaging is less about never having constraints and more about making constraints visible.

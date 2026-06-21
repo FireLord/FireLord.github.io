@@ -1,0 +1,24 @@
+---
+title: "Custom CALayer caption engine"
+description: "What a frame-accurate caption renderer needs when typography, timing, and video export all have to agree."
+date: "2024.05"
+read: "10 min"
+---
+
+## Timing is the feature
+
+Caption tools live or die on timing. A beautiful text style still feels broken if it appears a frame late or drifts during export.
+
+The renderer needs to treat time as a first-class input, not a side effect of UI playback.
+
+## Layers give control
+
+CALayer is a good fit when text, transforms, opacity, and animation need precise composition. It also gives the export pipeline a structure that can be reproduced outside the editor preview.
+
+The hard part is keeping preview and export behavior aligned.
+
+## Editing should stay calm
+
+The renderer can be complex, but the editing surface should not be. Handles, snapping, text layout, and style changes should feel immediate.
+
+That is where the engineering work becomes product work.
