@@ -1,25 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import portrait from "@/assets/aman-portrait.jpg";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Aman Kumar · Software Engineer" },
-      {
-        name: "description",
-        content:
-          "Personal site of Aman Kumar, a software engineer building mobile products, SDKs and AI-powered tools.",
-      },
-      { property: "og:title", content: "Aman Kumar · Software Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Software engineer building mobile products, SDKs and AI-powered tools.",
-      },
-    ],
-  }),
-  component: Home,
-});
+import Image from "next/image";
+import type { ReactNode } from "react";
 
 /* --------------------------------- data ---------------------------------- */
 
@@ -101,13 +81,41 @@ const HIGHLIGHTS = [
 ];
 
 const JOURNEY = [
-  { year: "2017", title: "Android ROM Development", note: "First taste of systems: flashing, breaking, fixing." },
-  { year: "2018", title: "Kernel Development", note: "Custom kernels, device trees, low-level performance work." },
-  { year: "2020", title: "Open Source Contributions", note: "XDA, GitHub, contributing back to the communities I learned from." },
-  { year: "2021", title: "Android & Flutter Apps", note: "From the kernel up to the UI: shipping real apps." },
-  { year: "2023", title: "SwiftUI & Apple Platforms", note: "Deep dive into Apple's stack: iOS, iPadOS, design-led engineering." },
-  { year: "2024", title: "Founding Engineer", note: "Joined Inspire Dev Studio. Owning architecture end-to-end." },
-  { year: "Today", title: "AI-powered products & SDKs", note: "Shipping AI-native tools and the SDKs that power them." },
+  {
+    year: "2017",
+    title: "Android ROM Development",
+    note: "First taste of systems: flashing, breaking, fixing.",
+  },
+  {
+    year: "2018",
+    title: "Kernel Development",
+    note: "Custom kernels, device trees, low-level performance work.",
+  },
+  {
+    year: "2020",
+    title: "Open Source Contributions",
+    note: "XDA, GitHub, contributing back to the communities I learned from.",
+  },
+  {
+    year: "2021",
+    title: "Android & Flutter Apps",
+    note: "From the kernel up to the UI: shipping real apps.",
+  },
+  {
+    year: "2023",
+    title: "SwiftUI & Apple Platforms",
+    note: "Deep dive into Apple's stack: iOS, iPadOS, design-led engineering.",
+  },
+  {
+    year: "2024",
+    title: "Founding Engineer",
+    note: "Joined Inspire Dev Studio. Owning architecture end-to-end.",
+  },
+  {
+    year: "Today",
+    title: "AI-powered products & SDKs",
+    note: "Shipping AI-native tools and the SDKs that power them.",
+  },
 ];
 
 const PROJECTS = [
@@ -123,19 +131,43 @@ const PROJECTS = [
 
 const WRITING = [
   { title: "Building an iOS SDK", read: "8 min", date: "2025.03" },
-  { title: "Creating XCFrameworks the right way", read: "6 min", date: "2025.02" },
+  {
+    title: "Creating XCFrameworks the right way",
+    read: "6 min",
+    date: "2025.02",
+  },
   { title: "SwiftUI + UIKit in production", read: "11 min", date: "2024.11" },
   { title: "Building real-time chat systems", read: "14 min", date: "2024.09" },
-  { title: "An AI-assisted development workflow", read: "9 min", date: "2024.07" },
+  {
+    title: "An AI-assisted development workflow",
+    read: "9 min",
+    date: "2024.07",
+  },
 ];
 
 /* ------------------------------- components ------------------------------ */
 
-function Mono({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <span className={`font-mono text-[12px] tracking-tight ${className}`}>{children}</span>;
+function Mono({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span className={`font-mono text-[12px] tracking-tight ${className}`}>
+      {children}
+    </span>
+  );
 }
 
-function SectionLabel({ index, children }: { index: string; children: React.ReactNode }) {
+function SectionLabel({
+  index,
+  children,
+}: {
+  index: string;
+  children: ReactNode;
+}) {
   return (
     <div className="flex items-center gap-3 mb-10">
       <Mono className="text-[color:var(--ember)]">{index}</Mono>
@@ -159,15 +191,19 @@ function CatGlyph({ className = "" }: { className?: string }) {
 
 /* ---------------------------------- page --------------------------------- */
 
-function Home() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
         <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
           <a href="#top" className="flex items-baseline gap-2 group">
-            <span className="text-[15px] font-semibold tracking-tight">Aman Kumar</span>
-            <span className="font-mono text-[11px] text-muted-foreground">Software Engineer</span>
+            <span className="text-[15px] font-semibold tracking-tight">
+              Aman Kumar
+            </span>
+            <span className="font-mono text-[11px] text-muted-foreground">
+              Software Engineer
+            </span>
           </a>
           <nav className="hidden md:flex items-center gap-8">
             {NAV.map((n) => (
@@ -184,7 +220,9 @@ function Home() {
             className="group inline-flex items-center gap-2 rounded-md border border-border bg-surface/60 px-2.5 py-1.5 hover:border-[color:var(--ember)]/40 hover:bg-surface transition-colors"
             aria-label="Open command palette"
           >
-            <span className="text-[12px] text-muted-foreground group-hover:text-foreground">Search</span>
+            <span className="text-[12px] text-muted-foreground group-hover:text-foreground">
+              Search
+            </span>
             <kbd className="font-mono text-[10px] text-muted-foreground border border-border rounded px-1.5 py-0.5 bg-background">
               ⌘K
             </kbd>
@@ -202,17 +240,18 @@ function Home() {
         <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-28 lg:pt-32 lg:pb-40 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
           <div>
             <Mono className="text-muted-foreground">
-              <span className="text-[color:var(--ember)]">●</span>{" "}
-              available · founding engineer @ inspire dev studio
+              <span className="text-[color:var(--ember)]">●</span> available ·
+              founding engineer @ inspire dev studio
             </Mono>
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[0.95]">
               Aman Kumar.
             </h1>
             <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-              Software Engineer building mobile products, SDKs and AI-powered tools.
-              Currently Founding Engineer at <span className="text-foreground">Inspire Dev Studio</span>.
-              Started with Android ROMs and open source, and eventually found my way
-              into iOS, backend systems, SDKs and AI-native products.
+              Software Engineer building mobile products, SDKs and AI-powered
+              tools. Currently Founding Engineer at{" "}
+              <span className="text-foreground">Inspire Dev Studio</span>.
+              Started with Android ROMs and open source, and eventually found my
+              way into iOS, backend systems, SDKs and AI-native products.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -248,17 +287,24 @@ function Home() {
                 </span>
               ))}
             </div>
-
           </div>
 
           {/* profile card */}
           <div className="relative">
             <div className="relative rounded-2xl border border-border bg-surface/60 p-3 shadow-[var(--shadow-card)]">
-              <div className="absolute -inset-px rounded-2xl pointer-events-none opacity-60"
-                   style={{ background: "linear-gradient(180deg, oklch(0.705 0.175 48 / 0.15), transparent 40%)", mask: "linear-gradient(black, black) content-box, linear-gradient(black, black)", WebkitMask: "linear-gradient(black, black) content-box, linear-gradient(black, black)" }} />
+              <div
+                className="absolute -inset-px rounded-2xl pointer-events-none opacity-60"
+                style={{
+                  background:
+                    "linear-gradient(180deg, oklch(0.705 0.175 48 / 0.15), transparent 40%)",
+                  mask: "linear-gradient(black, black) content-box, linear-gradient(black, black)",
+                  WebkitMask:
+                    "linear-gradient(black, black) content-box, linear-gradient(black, black)",
+                }}
+              />
               <div className="relative overflow-hidden rounded-xl">
-                <img
-                  src={portrait}
+                <Image
+                  src="/aman-portrait.jpg"
                   alt="Aman Kumar at his desk with a cat"
                   width={896}
                   height={1152}
@@ -303,20 +349,22 @@ function Home() {
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12">
           <div className="space-y-6 text-[15px] leading-relaxed text-muted-foreground max-w-2xl">
             <p>
-              I&apos;ve been writing code since I was a teenager flashing custom ROMs onto
-              Android phones at 2am. That curiosity, taking things apart to understand
-              them, has shaped every chapter since.
+              I&apos;ve been writing code since I was a teenager flashing custom
+              ROMs onto Android phones at 2am. That curiosity, taking things
+              apart to understand them, has shaped every chapter since.
             </p>
             <p>
-              From <span className="text-foreground">AOSP</span> and custom kernels, I drifted
-              into open source on <span className="text-foreground">XDA</span> and GitHub. That
-              led to building real apps in Flutter, then a deep dive into{" "}
-              <span className="text-foreground">SwiftUI</span> and Apple platforms.
+              From <span className="text-foreground">AOSP</span> and custom
+              kernels, I drifted into open source on{" "}
+              <span className="text-foreground">XDA</span> and GitHub. That led
+              to building real apps in Flutter, then a deep dive into{" "}
+              <span className="text-foreground">SwiftUI</span> and Apple
+              platforms.
             </p>
             <p>
-              These days I design and ship full products: iOS apps, the SDKs that
-              power them, backend systems with Postgres &amp; Redis, and AI-native
-              workflows that make all of it move faster.
+              These days I design and ship full products: iOS apps, the SDKs
+              that power them, backend systems with Postgres &amp; Redis, and
+              AI-native workflows that make all of it move faster.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3 content-start">
@@ -351,12 +399,16 @@ function Home() {
                 />
                 <div className="absolute inset-0 grid-bg opacity-50" />
                 <div className="absolute left-5 bottom-4">
-                  <div className="text-3xl font-semibold tracking-tight">{w.name}</div>
+                  <div className="text-3xl font-semibold tracking-tight">
+                    {w.name}
+                  </div>
                   <Mono className="text-muted-foreground">{w.tag}</Mono>
                 </div>
               </div>
               <div className="p-5">
-                <p className="text-[14px] leading-relaxed text-muted-foreground">{w.desc}</p>
+                <p className="text-[14px] leading-relaxed text-muted-foreground">
+                  {w.desc}
+                </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {w.tech.map((t) => (
                     <span
@@ -384,8 +436,12 @@ function Home() {
               <Mono className="text-[color:var(--ember)]">
                 {String(i + 1).padStart(2, "0")}
               </Mono>
-              <h3 className="mt-3 text-[15px] font-medium tracking-tight">{h.title}</h3>
-              <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">{h.body}</p>
+              <h3 className="mt-3 text-[15px] font-medium tracking-tight">
+                {h.title}
+              </h3>
+              <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
+                {h.body}
+              </p>
             </div>
           ))}
         </div>
@@ -398,10 +454,16 @@ function Home() {
             <li key={j.year} className="relative pl-8 pb-10 last:pb-0 group">
               <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-background border border-border group-hover:border-[color:var(--ember)] group-hover:shadow-[0_0_14px_var(--ember)] transition-all" />
               <div className="flex items-baseline gap-4 flex-wrap">
-                <Mono className="text-[color:var(--ember)] w-16 shrink-0">{j.year}</Mono>
-                <h3 className="text-[17px] font-medium tracking-tight">{j.title}</h3>
+                <Mono className="text-[color:var(--ember)] w-16 shrink-0">
+                  {j.year}
+                </Mono>
+                <h3 className="text-[17px] font-medium tracking-tight">
+                  {j.title}
+                </h3>
               </div>
-              <p className="mt-2 text-[14px] text-muted-foreground max-w-xl">{j.note}</p>
+              <p className="mt-2 text-[14px] text-muted-foreground max-w-xl">
+                {j.note}
+              </p>
             </li>
           ))}
         </ol>
@@ -422,7 +484,9 @@ function Home() {
                   ↗
                 </span>
               </div>
-              <div className="mt-6 text-[15px] font-medium tracking-tight">{p.name}</div>
+              <div className="mt-6 text-[15px] font-medium tracking-tight">
+                {p.name}
+              </div>
             </a>
           ))}
         </div>
@@ -438,7 +502,9 @@ function Home() {
                 className="group flex items-center justify-between gap-6 py-5 hover:text-[color:var(--ember)] transition-colors"
               >
                 <div className="flex items-center gap-6 min-w-0">
-                  <Mono className="text-muted-foreground w-16 shrink-0">{w.date}</Mono>
+                  <Mono className="text-muted-foreground w-16 shrink-0">
+                    {w.date}
+                  </Mono>
                   <span className="text-[15px] font-medium tracking-tight truncate">
                     {w.title}
                   </span>
@@ -483,7 +549,9 @@ function Home() {
                   href="#"
                   className="group flex items-center justify-between rounded-lg border border-border bg-background/40 px-4 py-3 hover:border-[color:var(--ember)]/40 transition-colors"
                 >
-                  <Mono className="text-muted-foreground">{c.label.toLowerCase()}</Mono>
+                  <Mono className="text-muted-foreground">
+                    {c.label.toLowerCase()}
+                  </Mono>
                   <span className="text-[14px] group-hover:text-[color:var(--ember)] transition-colors">
                     {c.value} ↗
                   </span>
@@ -506,7 +574,9 @@ function Home() {
               </Mono>
             </div>
           </div>
-          <Mono className="text-muted-foreground">© {new Date().getFullYear()}</Mono>
+          <Mono className="text-muted-foreground">
+            © {new Date().getFullYear()}
+          </Mono>
         </div>
       </footer>
     </div>
@@ -522,7 +592,7 @@ function Section({
   id: string;
   label: string;
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section id={id} className="relative">

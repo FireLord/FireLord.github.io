@@ -1,5 +1,5 @@
 @import "tailwindcss" source(none);
-@source "../src";
+@source "..";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -42,10 +42,10 @@
   --radius: 0.625rem;
 
   /* Dark by default - single theme */
-  --background: oklch(0.145 0.005 285);     /* #09090B */
-  --foreground: oklch(0.985 0 0);           /* #FAFAFA */
-  --surface: oklch(0.18 0.003 285);         /* #111111 */
-  --surface-2: oklch(0.215 0.004 285);      /* #18181B */
+  --background: oklch(0.145 0.005 285); /* #09090B */
+  --foreground: oklch(0.985 0 0); /* #FAFAFA */
+  --surface: oklch(0.18 0.003 285); /* #111111 */
+  --surface-2: oklch(0.215 0.004 285); /* #18181B */
   --card: oklch(0.18 0.003 285);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.18 0.003 285);
@@ -55,8 +55,8 @@
   --primary-foreground: oklch(0.145 0.005 285);
 
   /* Ember - subtle warm orange */
-  --ember: oklch(0.705 0.175 48);           /* ~ #F97316 */
-  --ember-glow: oklch(0.62 0.19 38);        /* ~ #EA580C */
+  --ember: oklch(0.705 0.175 48); /* ~ #F97316 */
+  --ember-glow: oklch(0.62 0.19 38); /* ~ #EA580C */
 
   --secondary: oklch(0.215 0.004 285);
   --secondary-foreground: oklch(0.985 0 0);
@@ -66,14 +66,23 @@
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.62 0.22 27);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.27 0.005 285);          /* #27272A */
+  --border: oklch(0.27 0.005 285); /* #27272A */
   --input: oklch(0.27 0.005 285);
   --ring: oklch(0.705 0.175 48);
 
-  --gradient-ember: linear-gradient(135deg, oklch(0.705 0.175 48) 0%, oklch(0.62 0.19 38) 100%);
-  --gradient-fade: radial-gradient(circle at 50% 0%, oklch(0.705 0.175 48 / 0.12), transparent 60%);
+  --gradient-ember: linear-gradient(
+    135deg,
+    oklch(0.705 0.175 48) 0%,
+    oklch(0.62 0.19 38) 100%
+  );
+  --gradient-fade: radial-gradient(
+    circle at 50% 0%,
+    oklch(0.705 0.175 48 / 0.12),
+    transparent 60%
+  );
   --shadow-ember: 0 0 60px -10px oklch(0.705 0.175 48 / 0.25);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 8px 30px -10px oklch(0 0 0 / 0.6);
+  --shadow-card:
+    0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 8px 30px -10px oklch(0 0 0 / 0.6);
 }
 
 @layer base {
@@ -114,7 +123,12 @@
 }
 
 @utility hairline {
-  background-image: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.08), transparent);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    oklch(1 0 0 / 0.08),
+    transparent
+  );
   height: 1px;
 }
 
