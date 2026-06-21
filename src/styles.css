@@ -1,0 +1,126 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ember: var(--ember);
+  --color-ember-glow: var(--ember-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Dark by default - single theme */
+  --background: oklch(0.145 0.005 285);     /* #09090B */
+  --foreground: oklch(0.985 0 0);           /* #FAFAFA */
+  --surface: oklch(0.18 0.003 285);         /* #111111 */
+  --surface-2: oklch(0.215 0.004 285);      /* #18181B */
+  --card: oklch(0.18 0.003 285);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.18 0.003 285);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.145 0.005 285);
+
+  /* Ember - subtle warm orange */
+  --ember: oklch(0.705 0.175 48);           /* ~ #F97316 */
+  --ember-glow: oklch(0.62 0.19 38);        /* ~ #EA580C */
+
+  --secondary: oklch(0.215 0.004 285);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.215 0.004 285);
+  --muted-foreground: oklch(0.708 0.005 285); /* #A1A1AA */
+  --accent: oklch(0.215 0.004 285);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.62 0.22 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.27 0.005 285);          /* #27272A */
+  --input: oklch(0.27 0.005 285);
+  --ring: oklch(0.705 0.175 48);
+
+  --gradient-ember: linear-gradient(135deg, oklch(0.705 0.175 48) 0%, oklch(0.62 0.19 38) 100%);
+  --gradient-fade: radial-gradient(circle at 50% 0%, oklch(0.705 0.175 48 / 0.12), transparent 60%);
+  --shadow-ember: 0 0 60px -10px oklch(0.705 0.175 48 / 0.25);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 8px 30px -10px oklch(0 0 0 / 0.6);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    background-color: var(--color-background);
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background-color: oklch(0.705 0.175 48 / 0.3);
+    color: var(--color-foreground);
+  }
+}
+
+@utility font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "calt", "ss02";
+}
+
+@utility ember-text {
+  background-image: var(--gradient-ember);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility ember-glow {
+  box-shadow: var(--shadow-ember);
+}
+
+@utility hairline {
+  background-image: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.08), transparent);
+  height: 1px;
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
