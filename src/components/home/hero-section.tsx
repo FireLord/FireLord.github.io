@@ -19,7 +19,7 @@ export function HeroSection() {
         }}
       />
       <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-6 py-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16 lg:py-16">
-        <div>
+        <div className="text-center lg:text-left">
           <Mono className="text-muted-foreground">
             founding engineer @{" "}
             <a
@@ -34,7 +34,7 @@ export function HeroSection() {
           <h1 className="mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
             Aman Kumar<span className="text-[color:var(--ember)]">.</span>
           </h1>
-          <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-8 max-w-xl text-[15px] leading-relaxed text-muted-foreground lg:mx-0">
             Software Engineer building mobile products, SDKs and AI-powered
             tools. Currently Founding Engineer at{" "}
             <a
@@ -49,7 +49,7 @@ export function HeroSection() {
             way into iOS, backend systems, SDKs and AI-native products.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <a
               href={RESUME_URL}
               target="_blank"
@@ -75,7 +75,7 @@ export function HeroSection() {
             </a>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-2">
+          <div className="mt-12 flex flex-wrap justify-center gap-2 lg:justify-start">
             {STACK.map((item) => (
               <span
                 key={item}
