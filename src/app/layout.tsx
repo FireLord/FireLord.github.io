@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Aman Kumar · Software Engineer",
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SiteHeader />
           {children}
           <SiteFooter />
+          <Analytics />
         </div>
       </body>
     </html>
