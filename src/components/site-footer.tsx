@@ -30,7 +30,10 @@ export function SiteFooter() {
           </div>
         </div>
         <Mono className="text-muted-foreground">
-          © {new Date().getFullYear()}
+          <span className="inline-block text-[13px] leading-none align-[-0.04em]">
+            ©
+          </span>{" "}
+          {new Date().getFullYear()}
         </Mono>
       </div>
     </footer>

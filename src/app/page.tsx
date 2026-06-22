@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { CatGlyph } from "@/components/cat-glyph";
-import { BLOG_PAGE_SIZE, getBlogPosts } from "@/lib/blog";
+import { getBlogPosts } from "@/lib/blog";
 
 /* --------------------------------- data ---------------------------------- */
 
@@ -13,6 +13,8 @@ const STACK = [
   "PostgreSQL",
   "AI-Assisted Development",
 ];
+
+const HOME_BLOG_PREVIEW_SIZE = 3;
 
 const STATUS = [
   { icon: "📱", label: "Apple Platforms" },
@@ -117,7 +119,7 @@ function SectionLabel({
 
 export default function Home() {
   const blogPosts = getBlogPosts();
-  const visibleBlogPosts = blogPosts.slice(0, BLOG_PAGE_SIZE);
+  const visibleBlogPosts = blogPosts.slice(0, HOME_BLOG_PREVIEW_SIZE);
   const remainingBlogPosts = blogPosts.length - visibleBlogPosts.length;
 
   return (
@@ -381,7 +383,7 @@ export default function Home() {
         {remainingBlogPosts > 0 ? (
           <div className="mt-8 flex justify-center">
             <a
-              href="/blog?page=2"
+              href="/blog"
               className="group inline-flex items-center gap-3 rounded-md border border-border bg-surface/60 px-4 py-2.5 text-[13px] transition-colors hover:border-[color:var(--ember)]/40 hover:text-[color:var(--ember)]"
             >
               Load more
