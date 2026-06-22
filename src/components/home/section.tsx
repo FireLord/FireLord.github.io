@@ -23,6 +23,7 @@ export function Section({
   label,
   title,
   children,
+  action,
   minScreen = true,
   centerContent = false,
 }: {
@@ -30,6 +31,7 @@ export function Section({
   label: string;
   title: string;
   children: ReactNode;
+  action?: ReactNode;
   minScreen?: boolean;
   centerContent?: boolean;
 }) {
@@ -46,9 +48,12 @@ export function Section({
         }`}
       >
         <SectionLabel index={label}>{title}</SectionLabel>
-        <h2 className="mb-8 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
-          {title}
-        </h2>
+        <div className="mb-8 flex items-center justify-between gap-4">
+          <h2 className="text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+            {title}
+          </h2>
+          {action}
+        </div>
         {children}
       </div>
     </section>

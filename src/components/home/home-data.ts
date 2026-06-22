@@ -53,6 +53,34 @@ export const WORK = [
     tech: ["swiftui", "openai", "node"],
     href: "https://github.com/firelord/slidenews",
   },
+  {
+    name: "Soundscape",
+    tag: "Wellness · Music",
+    desc: "A sleep and meditation app with soothing playback, podcasts and guided wellness flows. Built the iOS app from scratch in SwiftUI.",
+    tech: ["swiftui", "mvvm", "media"],
+    href: "https://apps.apple.com/in/app/soundscape-sleep-meditate/id6480345644",
+  },
+  {
+    name: "Trakeat",
+    tag: "Health · Android",
+    desc: "Health tracking app for water logging, exercise and calories. Built with Compose, Firebase, Room, Koin and Retrofit.",
+    tech: ["compose", "firebase", "room"],
+    href: "https://play.google.com/store/apps/details?id=com.health.trakeat",
+  },
+  {
+    name: "JotDown",
+    tag: "KMP · Notes",
+    desc: "Cross-platform notes app with Android in Jetpack Compose, iOS in SwiftUI and shared persistence through SQLDelight.",
+    tech: ["kmp", "swiftui", "sqldelight"],
+    href: "https://github.com/FireLord/JotDown",
+  },
+  {
+    name: "Exyte Chat",
+    tag: "OSS · SwiftUI",
+    desc: "Contributed Kingfisher-backed image caching and stability improvements to Exyte's SwiftUI chat library.",
+    tech: ["swiftui", "oss", "kingfisher"],
+    href: "https://github.com/exyte/Chat/pull/215",
+  },
 ];
 
 export const CONTACT_LINKS = [
