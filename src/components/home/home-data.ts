@@ -15,7 +15,7 @@ export const STATUS = [
   { icon: "🌍", label: "Full Stack Product" },
 ];
 
-export const RESUME_URL = "/AmanKumar-iOS-Resume.pdf";
+export const RESUME_URL = "/aman_kumar_resume.pdf";
 
 export const LINKS = {
   github: "https://github.com/FireLord",
